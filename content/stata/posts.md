@@ -53,8 +53,8 @@ subtitle = ""
   # gradient_end = "SkyBlue"
 
   # Background image.
-  image = "headers/stata-16.png"  # Name of image in `static/img/`.
-  image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
+  # image = "headers/stata-16.png"  # Name of image in `static/img/`.
+  # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
 
   # Text color (true=light or false=dark).
   # text_color_light = true  
@@ -66,5 +66,6 @@ subtitle = ""
  # CSS class.
  css_class = ""
 +++
+{{< figure library="true" src="headers/stata-16.png" title="A caption" lightbox="true" >}}
 Over the last five years, I have spend quite a lot of time working with Stata and health registry data. In the beginning it was a struggle. Over time it became almost a hobby. Here I will share some of the tips, tricks, and do-files, I picked up along the way.
 Please let me know if you have suggestions, spot errors or perhaps even find it useful.
