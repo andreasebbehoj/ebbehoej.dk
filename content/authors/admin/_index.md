@@ -33,7 +33,7 @@ education:
   - course: MD
     institution: Aarhus University
     year: 2020
-  - course: Pre-grad research year in pheochromocytoma
+  - course: Pre-grad research year on pheochromocytoma
     institution: Aarhus University
     year: 2016
 
@@ -75,5 +75,6 @@ user_groups:
 - Visitors
 ---
 
-I am a PhD student at Aarhus University. My research focus is on the presentation, diagnosis and treatment outcomes of adrenal tumors. I spend a lot of time on Stata and also do a bit of teaching.  
-On my website, I will share Stata code that others might find useful and the occasional update on my PhD project.
+I am a PhD student at Aarhus University. My research focus is the diagnosis and prognosis of adrenal tumors. I spend a lot of time on Stata and also do a bit of teaching.  
+
+On my website, I will share Stata code that others might find useful and the occasional update on my PhD project.  
