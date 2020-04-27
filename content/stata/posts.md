@@ -7,7 +7,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 60  # Order that this section will appear.
 
-title = "Recent Posts"
+title = "Posts on Stata"
 subtitle = ""
 
 [content]
@@ -66,5 +66,3 @@ subtitle = ""
  # CSS class.
  css_class = ""
 +++
-
-Some text on Stata
