@@ -14,7 +14,7 @@ role: MD, PhD-student
 
 # Organizations/Affiliations
 organizations:
-- name: Aarhus University & Aarhus University Hospital
+- name: Aarhus University
   url: ""
 
 # Short bio (displayed in user profile at end of posts)
@@ -58,7 +58,7 @@ social:
 - icon: cv
   icon_pack: cv
   link: http://pure.au.dk/portal/en/andebb@clin.au.dk
-  
+
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -75,6 +75,4 @@ user_groups:
 - Visitors
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+Andreas Ebbehøj is a PhD student at Aarhus University. His research focus is on the presentation, diagnosis and treatment outcomes of adrenal tumors. Also does a bit of teaching for MDs and students.
