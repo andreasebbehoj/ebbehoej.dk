@@ -4,24 +4,28 @@ subtitle: You've got Stata installed and are ready to analyze your data. But how
   do you get started with importing your data, removing outliers errors and make
   that sweet graph? In this post, I'll share my favourite go-to sources on.
 date: 2020-04-27T12:53:33.840Z
-summary: Hope these ressources are useful. Remember, that if you have a problem,
-  then Google probably holds the answer.
+summary: You've got Stata installed and are ready to analyze your data. But how
+  do you get started with importing your data, removing outliers errors and make
+  that sweet graph? In this post, I'll share my favourite go-to sources on. Here
+  I'll share some of my go to ressources for when Stata serves you lemons.
 draft: false
 featured: false
 authors:
   - admin
-categories:
+tags:
   - stata
+categories:
+  - ""
 image:
   filename: featured
   focal_point: Smart
   preview_only: false
 ---
-Whatever the question, "Google" is usually the answer. But here are some other great guides and ressources that I use a lot.
+Whatever the question, "Google" is usually the answer. But there a lot of great guides and ressources that might give you an answer a lot faster than simply wandering aimlessly around the internet. In this post, I'll share my favourite go-to sources for whenever Stata serves you lemons.
 
 **Stata cheat sheets ([link](https://www.stata.com/bookstore/stata-cheat-sheets/))**
 
-The best overview of (almost) all commands you are going to need. Commands are neetly sorted in the different steps most analyses consists of: 
+The best overview of (almost) all commands you are ever going to need. Commands are neetly sorted in the different steps most analyses consists of: 
 
 1. Data processing: Importing data, exploring data for weird outliers, removing duplicates, making new variables etc. There are commands for importing from Excel, text files etc. 
 2. Data transformation: Removing variables, labeling data, correcting errors, summarizing variables and generating new ones. And how to merge (combine) two data sets. Oh merging...
@@ -39,9 +43,21 @@ THE in-depth Stata bible by the man and the legend: Svend Juul. It covers all st
 
 **Stata's dialog box and help function**
 
-When I have problems with a specific Stata function, the first thing I usually do is typing "db *function-name*". Db means dialog box and it basically opens a dialog box for the specific command so you can select the variables and options with the mouse instead of typing it as a command. 
+When I have problems with a specific Stata function, the first thing I usually do is typing
 
-If *db* doesn't solve your problem, then you can type "help *function-name*". This will open the Stata help file that explains how to use the command and provides some examples. If that still doesn't do it, then it is time to google or ask a friend. 
+```
+db [insert function name]
+```
+
+Db means dialog box and it basically opens a dialog box for the specific command so you can select the variables and options with the mouse instead of typing it as a command. 
+
+If *db* doesn't solve your problem, then you can type 
+
+```
+help [insert function name]
+```
+
+This will open the Stata help file that explains how to use the command and provides some examples. If that still doesn't do it, then it is time to ask google or perhaps a nerdy friend. 
 
 **Statalist - the Stata forum ([link](https://www.statalist.org/))**
 
@@ -50,3 +66,7 @@ Whenever I google "stata how to something-something", Statalist is usually the f
 A word of warning before you ask a question at Statalist: [Read the guide ](https://www.statalist.org/forums/help#gfaq_postingadvice)first! Stata-aficionados from around the globe are willing to help you but they will bite, if you don't follow protocol. It is called Stata, not STATA. Use your real name. And woe you, if you do you submit your code when asking a question. 
 
 Read. The. Guide. First.
+
+ **Conclusion**
+
+I hope some of these ressources are useful to you. Remember, that if you have a problem, then Google probably holds the answer.
