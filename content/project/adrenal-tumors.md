@@ -28,8 +28,14 @@ caption = "Hormonally active tumors in the adrenal glands are rare but potential
 
 +++
 
-The diagnosis of adrenal tumors has increased with a dramatic 2264 % in the last 21 years. Current guidelines on how to handle these patients rely on outdated and biased data. We aim to describe clinical presentation of adrenal tumors and determine their incidence, prevalence and prognosis.
-{{< figure src="/img/patient-registry-adrenal-tumors2.jpg" title="Number of new patients diagnosed with or referred for adrenal tumors who have undergone adrenal surgery. Based on preliminary data from the Danish National Patient Registry." >}}
-We will identify patients diagnosed with adrenal tumors in 1996-2016 using Danish health registries and the Adrenal Tumor Database at the Mayo Clinic, Minnesota. We will obtain clinical data from health records to determine diagnostic value of symptoms and radiographic tumor characteristics in differentiating between hormonally active, silent and malignant adrenal tumors.
+Contrary to popular belief among physicians, adrenal tumors are quite common. Roughly 1% of everybody who undergo a CT scan or an MRI are found to have an adrenal tumor by change. These incidentally found tumors are known as _adrenal incidentalomas_. Due to the increasing use of imaging in diagnostic work-up of pretty much all diseases, we have seen a dramatic increase of number of adrenal tumors being found each year. Based on preliminary Danish data, tumors diagnosed per year has increased with well over 2000% from 1996 to 2016.
 
-This project is a unique opportunity to provide urgently needed data of unrivaled quality. We hope that this PhD project will help in improving the guidelines on how to manage the increasing clinical challenge of adrenal incidentalomas.
+{{< figure src="/img/patient-registry-adrenal-tumors2.jpg" title="Number of new patients diagnosed with or referred for adrenal tumors who have undergone adrenal surgery. Based on preliminary data from the Danish National Patient Registry." >}}
+
+The vast majority of adrenal incidentalomas are benign and of no consequence to the patient. But sometimes incidentalomas produce hormones or are malignant. These tumors are potentially life-threatening and need surgery ASAP, but the trick is to recognize them tumors among the most more common benign tumors. That is what my PhD  is about.
+
+The aims of my PhD are  
+1. Determine how many adrenal tumors are dangerous (i.e. malignant or producing hormones) vs benign and of no consequence to the patients (known as non-functioning adenomas).
+2. Improve diagnostic value of symptoms and radiographic tumor characteristics in differentiating between hormonally active, silent and malignant adrenal tumors.
+
+With the help of talented senior researchers from Denmark and USA, my hope is that we will be able to accomplish these aims and improve the treatment of the growing number of patients with adrenal tumors.
