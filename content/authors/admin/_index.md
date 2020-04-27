@@ -18,7 +18,7 @@ organizations:
   url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: Newly minted MD + doing PhD on epidemiology of adrenal tumors + hobbyist
+bio: Newly minted MD + Adrenal research + Stata hobbyist
 
 interests:
 - Adrenal Tumors
@@ -75,4 +75,5 @@ user_groups:
 - Visitors
 ---
 
-I am a PhD student at Aarhus University. My research focus is on the presentation, diagnosis and treatment outcomes of adrenal tumors. I spend a lot of time on Stata and also do a bit of teaching.
+I am a PhD student at Aarhus University. My research focus is on the presentation, diagnosis and treatment outcomes of adrenal tumors. I spend a lot of time on Stata and also do a bit of teaching.  
+On my website, I will share Stata code that others might find useful and the occasional update on my PhD project.
