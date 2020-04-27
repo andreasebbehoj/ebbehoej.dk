@@ -75,4 +75,4 @@ user_groups:
 - Visitors
 ---
 
-Andreas Ebbehøj is a PhD student at Aarhus University. His research focus is on the presentation, diagnosis and treatment outcomes of adrenal tumors. Also does a bit of teaching for MDs and students.
+I am a PhD student at Aarhus University. My research focus is on the presentation, diagnosis and treatment outcomes of adrenal tumors. I spend a lot of time on Stata and also do a bit of teaching.
