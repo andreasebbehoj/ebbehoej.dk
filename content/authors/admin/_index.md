@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Nelson Bighetti
+title: Andreas Ebbehøj
 
 # Username (this should match the folder name)
 authors:
@@ -10,32 +10,33 @@ authors:
 superuser: true
 
 # Role/position
-role: Professor of Artificial Intelligence
+role: MD, PhD-student
 
 # Organizations/Affiliations
 organizations:
-- name: Stanford University
+- name: Aarhus University & Aarhus University Hospital
   url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: Newly minted MD + doing PhD on epidemiology of adrenal tumors + hobbyist
 
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+- Adrenal Tumors
+- Epidemiology
+- Stata enthusiast
 
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
+  - course: PhD in epidemiology of adrenal tumors
+    institution: Aarhus University
+    year: 2019
+  - course: MD
+    institution: Aarhus University
+    year: 2020
+  - course: Pre-grad research year in pheochromocytoma
+    institution: Aarhus University
+    year: 2016
+
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
@@ -47,13 +48,17 @@ social:
   link: '#contact'  # For a direct email link, use "mailto:test@example.org".
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
-- icon: google-scholar
+  link: https://twitter.com/AEbbehoj
+- icon: orcid
   icon_pack: ai
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://orcid.org/0000-0001-7104-7824
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/andreasebbehoj
+- icon: cv
+  icon_pack: cv
+  link: http://pure.au.dk/portal/en/andebb@clin.au.dk
+  
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
