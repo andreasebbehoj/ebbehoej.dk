@@ -57,7 +57,7 @@ social:
   link: https://github.com/andreasebbehoj
 - icon: cv
   icon_pack: ai
-  link: http://pure.au.dk/portal/en/andebb@clin.au.dk
+  link: https://pure.au.dk/portal/en/andebb@clin.au.dk
 
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
