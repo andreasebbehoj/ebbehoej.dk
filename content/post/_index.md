@@ -1,14 +1,16 @@
 ---
-title: Posts
-
-# View.
-#   1 = List
-#   2 = Compact
-#   3 = Card
+draft: false
 view: 2
-
-# Optional header image (relative to `static/img/` folder).
+summary: Hurraah
 header:
   caption: ""
   image: ""
+title: Hello world
+subtitle: Let's see if it works
+date: 2020-04-27T08:15:04.433Z
+featured: false
+image:
+  preview_only: true
+  filename: portrait.jpg
 ---
+It does!
