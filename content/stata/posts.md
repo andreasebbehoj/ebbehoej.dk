@@ -3,7 +3,7 @@
 # This section displays recent blog posts from `content/post/`.
 
 widget = "pages"  # See https://sourcethemes.com/academic/docs/page-builder/
-headless = true  # This file represents a page section.
+headless = false  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 60  # Order that this section will appear.
 
@@ -66,4 +66,5 @@ subtitle = ""
  # CSS class.
  css_class = ""
 +++
-ASDASDASD
+Over the last five years, I have spend quite a lot of time working with Stata and health registry data. In the beginning it was a struggle. Over time it became almost a hobby. Here I will share some of the tips, tricks, and do-files, I picked up along the way.
+Please let me know if you have suggestions, spot errors or perhaps even find it useful.
