@@ -1,5 +1,5 @@
 [build]
-  command = "hugo" # hugo --gc --minify -b $URL
+  command = "hugo --gc --minify -b $URL" # hugo --gc --minify -b $URL
   publish = "public"
 
 
