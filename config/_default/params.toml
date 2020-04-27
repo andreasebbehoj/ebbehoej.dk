@@ -44,7 +44,7 @@ local_business_type = ""
 org_name = ""
 
 # Description for social sharing and search engines. If undefined, superuser role is used in place.
-description = ""
+description = "Andreas Ebbehoj - Adrenal researcher"
 
 ############################
 ## Site Features
@@ -90,7 +90,7 @@ address = {street = "AUH, Diabetes og Hormonsygdomme, Palle Juul-Jensens Bouleva
 
 # Geographic coordinates
 # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
-coordinates = {latitude = "37.4275", longitude = "-122.1697"}
+coordinates = {latitude = "56.191314", longitude = "10.169156"}
 
 # Directions for visitors to locate you.
 directions = "Entrance J, floor 1, sign J113, look for Medicinsk Forskningslaboratorie"
@@ -133,7 +133,7 @@ date_format = "Jan 2, 2006"
 time_format = "15:04"
 
 # Address format (choose from the [address_formats] list below or add you own to the list).
-address_format = "en-us"
+address_format = "de"
 
 ############################
 ## Advanced
