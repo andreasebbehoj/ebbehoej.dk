@@ -56,7 +56,7 @@ social:
   icon_pack: fab
   link: https://github.com/andreasebbehoj
 - icon: cv
-  icon_pack: cv
+  icon_pack: ai
   link: http://pure.au.dk/portal/en/andebb@clin.au.dk
 
 # Link to a PDF of your resume/CV from the About widget.
