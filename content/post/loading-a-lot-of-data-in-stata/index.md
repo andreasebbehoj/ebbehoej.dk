@@ -4,7 +4,7 @@ subtitle: How to use loops in Stata for loading many csv files.
 date: 2020-05-04T18:12:53.414Z
 summary: "A guide on how to load many csv or excel files into Stata without
   copy/pasting yourself to death."
-draft: true
+draft: false
 featured: false
 authors:
   - admin
