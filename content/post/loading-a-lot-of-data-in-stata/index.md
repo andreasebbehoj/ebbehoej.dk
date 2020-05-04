@@ -17,8 +17,8 @@ image:
   focal_point: Smart
   preview_only: false
 header:
-  image: "header.jpg"
-  caption: "Image credit: [Pxfuel](https://www.pxfuel.com/en/free-photo-qjalh)"
+  image: "header_csv.jpg"
+  caption: "Image credit: [Pxfuel](https://www.pxfuel.com/)"
 ---
 ### The Problem
 One of my colleagues had a pretty common data problem: How to load around 200 individual csv-files (comma separated files) into Stata?
