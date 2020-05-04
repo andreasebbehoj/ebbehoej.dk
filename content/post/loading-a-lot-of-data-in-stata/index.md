@@ -18,11 +18,12 @@ image:
   preview_only: false
 ---
 
-An office mate asked me about a Stata problem, he had been struggling with: how to load around 200 individual csv-files (comma separated files) into Stata?
+An office mate asked me about a Stata problem, he had been struggling with: How to load around 200 individual csv-files (comma separated files) into Stata?
+
+{{% toc %}}
 
 ### The Problem
-There were approx. 100 patients and each patient had 2 csv-files. He _could_ of course manually copy/paste the contents from file into a single excel file and then load the combined file into Stata. It is completely doable with 100 patients x 2 files, but it's repetitive and boring. And also there is the risk that he miss a file or copy the same file twice.
-And what if it was 1000 or 10000 files?
+There were approx. 100 patients and each patient had 2 csv-files. He _could_ of course manually copy/paste the contents from file into a single excel file and then load the combined file into Stata. While it is completely possible to do, it is also repetitive, boring and there is a risk of manual errors.
 
 No thanks. Plenty of monkey work in a PhD already.
 
