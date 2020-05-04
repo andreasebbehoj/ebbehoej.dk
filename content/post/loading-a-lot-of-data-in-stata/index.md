@@ -16,16 +16,19 @@ image:
   filename: featured
   focal_point: Smart
   preview_only: false
+header:
+  image: "header.jpg"
+  caption: "Image credit: [Pxfuel](https://www.pxfuel.com/en/free-photo-qjalh)"
 ---
+### The Problem
+One of my colleagues had a pretty common data problem: How to load around 200 individual csv-files (comma separated files) into Stata?
 
-An office mate asked me about a Stata problem, he had been struggling with: How to load around 200 individual csv-files (comma separated files) into Stata?
+There were approx. 100 patients and each patient had 2 csv-files containing different scans. He _could_ of course manually copy/paste the contents from file into a single excel file and then load the combined file into Stata. While it is completely possible to do, it is repetitive, boring and there is a high risk of making manual errors.
+
+No thanks. There is plenty of monkey work in a PhD already.
 
 {{% toc %}}
 
-### The Problem
-There were approx. 100 patients and each patient had 2 csv-files. He _could_ of course manually copy/paste the contents from file into a single excel file and then load the combined file into Stata. While it is completely possible to do, it is also repetitive, boring and there is a risk of manual errors.
-
-No thanks. Plenty of monkey work in a PhD already.
 
 ### The Solution
 We use Stata's mighty _loop_ function to do the copy-pasting for us. We'll do that in 3 steps:
