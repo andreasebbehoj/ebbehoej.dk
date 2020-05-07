@@ -2,8 +2,7 @@
 title: Loading (a lot of) data in Stata
 subtitle: How to use loop function in Stata for loading several csv files automatically.
 date: 2020-05-04T18:12:53.414Z
-summary: "A guide on how to load many csv or excel files into Stata without
-  copy/pasting yourself to death."
+summary: "How to load several csv files into Stata without copy/pasting yourself to death."
 draft: false
 featured: false
 authors:
@@ -48,8 +47,8 @@ All csv-files were stored in a single folder and systematically named: [ID numbe
 
 
 ### Step 1 - Define csv files
-First we need to define which files to include. Assuming you have your do file in the same folder as all the csv-files, then we want all csv files from the "current" folder (the folder that Stata is working in). We'll first define a _local_ with the path to the current folder, which Stata stores under the name c(pwd).
-```
+First we need to define which files to include. Assuming you have your do file in the same folder as all the csv-files, then we want all csv files from the "current" folder (the folder that Stata is working in). We'll first define a _local_ with the path to the current folder, which Stata stores under the name _c(pwd)_.
+```stata
 local filepath = "`c(pwd)'" // Save path to current folder in a local
 di "`c(pwd)'" // Display path to current folder
 ```
@@ -70,7 +69,7 @@ tempfile master // Generate temporary save file to store data in
 save `master', replace empty
 ```
 
-Next, we will ask Stata to run a loop (i.e. run the same code several times) for all files stored in the local _files_. The loop consists of two parts: A, where each csv file is imported (_import delimited_) and B, where that file is added (_append_) to bottom of the _master_ file. To keep track of which observations belong to which patients, we generate a variable _id_ in part A containing  the name of each imported csv file.
+Next, we will ask Stata to run a loop (i.e. run the same code several times) for all files stored in the local _files_. The loop consists of two parts: A, where each csv file is imported (`import delimited`) and B, where that file is added (`append`) to bottom of the _master_ file. To keep track of which observations belong to which patients, we generate a variable _id_ in part A containing  the name of each imported csv file.
 ```
 foreach x of local files {
     di "`x'" // Display file name
@@ -97,10 +96,10 @@ save "csv_combined.dta", replace
 
 
 ### Final remarks
-Hope this introduction to the _loop_ and _dir_ functions has helped. The principles can of course be utilized for much more complicated data set and/or more complex tasks.
+Hope this introduction to the `loop` and `dir` commands has helped. The principles can of course be utilized for much more complicated data set and/or more complex tasks.
 
 Other examples of use:
-* Importing txt-files (same principle as csv files above but change _dir_ and _import delimited_ to new file format)
+* Importing txt-files (same principle as csv files above but change `dir` and `import delimited` to new file format)
 * Importing pdf files (use DocuFreezer to batch convert pdf files to txt files and same as above)
-* Convert individual csv data files to individual Stata files (simply add _save "newfilename.dta", replace_ in bottom of loop)
-* Copy csv files from many different folders into a single folder using _copy_ and _shell_ (a bit more advanced, see this [post on Statalist](https://www.statalist.org/forums/forum/general-stata-discussion/general/1384969-using-copy-with-local-macros))
+* Convert individual csv data files to individual Stata files (simply add `save "newfilename.dta", replace` in bottom of loop)
+* Copy csv files from many different folders into a single folder using `copy` and `shell` (a bit more advanced, see this [post on Statalist](https://www.statalist.org/forums/forum/general-stata-discussion/general/1384969-using-copy-with-local-macros))
