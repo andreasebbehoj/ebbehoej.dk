@@ -1,8 +1,8 @@
 ---
-title: Loading (a lot of) data in Stata
-subtitle: How to use loop function in Stata for loading several csv files automatically.
+title: Loading multiple csv files in Stata
+subtitle: How to load endless csv files into Stata with the loop function instead of copy/pasting yourself to death.
 date: 2020-05-04T18:12:53.414Z
-summary: "How to load several csv files into Stata without copy/pasting yourself to death."
+summary: "How to load endless csv files into Stata with the loop function instead of copy/pasting yourself to death."
 draft: false
 featured: false
 authors:
@@ -24,7 +24,7 @@ One of my colleagues had a pretty common data problem: How to load around 200 in
 
 There were approx. 100 patients and each patient had 2 csv-files containing different scans. He _could_ of course manually copy/paste the contents from file into a single excel file and then load the combined file into Stata. While it is completely possible to do, it is repetitive, boring and there is a high risk of making manual errors.
 
-No thanks. There is plenty of monkey work in a PhD already.
+No thanks. Life offers plenty of monkey work already.
 
 {{% toc %}}
 
@@ -41,6 +41,7 @@ You can download the csv- and Stata Do-file from the example [here](https://gith
 Each patient had 2 csv-files that each looked somewhat like this:
 
 {{< figure src="id_data.png" title="example csv file (obviously, it is just gibberish and not real patient data)" lightbox="true" >}}
+Note, that number of rows or columns doesn't matter. However, for this code to work each column must represent a variable (preferly with variable name in first row) and each row represent an observation (which is the most common data structure). Importing files with other data structures is a story for another day.
 
 All csv-files were stored in a single folder and systematically named: [ID number]-data-1.csv and [ID number]-data-2.csv:
 {{< figure src="filelist.png" title="Data structure in folder" lightbox="true" >}}
@@ -63,11 +64,12 @@ di `"`files'"' // Display list of files to import data from
 ### Step 2 - Loop over files
 To actually import the files listed in the _files_ local, we'll do a couple of things
 
-First, we will generate a temporary file called _master_. This is where we store the new accumulating data.
+First, we will generate a temporary file called _master_.
 ```
 tempfile master // Generate temporary save file to store data in
 save `master', replace empty
 ```
+Note: The name of the tempfile is not important, this is simply where we will store the data while running our code.
 
 Next, we will ask Stata to run a loop (i.e. run the same code several times) for all files stored in the local _files_. The loop consists of two parts: A, where each csv file is imported (`import delimited`) and B, where that file is added (`append`) to bottom of the _master_ file. To keep track of which observations belong to which patients, we generate a variable _id_ in part A containing  the name of each imported csv file.
 ```
