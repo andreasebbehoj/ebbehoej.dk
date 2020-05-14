@@ -27,9 +27,9 @@ In this post, I'll share my favourite go-to ressources for whenever Stata sends 
 
 {{% toc %}}
 
-### YouTube guides
+### YouTube
 
-YouTube is a good place to start when learning Stata. There are **a lot** of YouTube guides on Stata. I personally prefer [StataCorp's own YouTube channel](https://www.youtube.com/user/statacorp/playlists) with Chuck Huber, because 1) they have tons of tutorials covering both both simple and complicated tasks, 2) videos are conveniently categorized in playlists, and 3) most importantly, because Chuck's videos are short! There are a lot of other videos on YouTube that have better graphics or cover more complex stuff. But they can be hit'n miss and some of them spend ages explaining every excruciating detail of even the simplest functions. Not Chuck Huber, that guy is a surgeon.
+There are **a lot** of YouTube tutorials on Stata and it is a good place to start when learning Stata. Personally, I prefer [StataCorp's own YouTube channel](https://www.youtube.com/user/statacorp/playlists) with Chuck Huber, because 1) they have tons of tutorials covering both both simple and complicated tasks, 2) videos are conveniently categorized in playlists, and 3) most importantly, because Chuck's videos are short! There are a lot of other videos on YouTube that have better graphics or cover more complex stuff. But they can be hit'n miss and some of them spend ages explaining every excruciating detail of even the simplest functions. Not Chuck Huber, that guy is a surgeon.
 
 Some good playlists to start with:
 
@@ -43,7 +43,7 @@ Some good playlists to start with:
 
 If you want to go oldschool and read a book (or e-book), I'd recommend:
 * Take Good Care of Your Data, by Svend Juul ([link](https://www.epidata.dk/php/downloadc.php?file=takecare.pdf))
-* An Introduction to Stata for Health Researchers, by Svend Juul ([link](https://www.stata.com/bookstore/introduction-stata-health-researchers/))**
+* An Introduction to Stata for Health Researchers, by Svend Juul ([link](https://www.stata.com/bookstore/introduction-stata-health-researchers/))
 
 The first is a short (and free!) little pamphlet. It a quick introduction on how to organize your data and work in Stata. Would especially recommend the sections on how to work with do-files. The sections on how to collect data in Epidata are also interesting but I would any day recommend using RedCAP for data collection.
 
@@ -54,9 +54,13 @@ The second book is THE in-depth Stata bible. There is a reason why Svend Juul is
 The ([cheat sheets](https://www.stata.com/bookstore/stata-cheat-sheets/)) likely provide the best overview of (almost) all commands you are ever going to need. Commands are neetly sorted after the different steps most analyses consists of:
 
 1. Data processing: Importing data, exploring data for weird outliers, removing duplicates, making new variables etc. There are commands for importing from Excel, text files etc.
+
 2. Data transformation: Removing variables, labeling data, correcting errors, summarizing variables and generating new ones. And of course how to merge (combine) two datasets. Oh merging...
+
 3. Data visualization & Plotting in Stata: Scatter plots (ie. XY-plots), histograms, bar charts, boxplots, how to combine graphs, and the list goes on.
+
 4. Data analysis: T-tests, linear regressions, non-parametric tests, time to event analyses, and much much more. This is what it all comes down to, in your endless hunt for that elusive p-value <.05.
+
 5. Programming: This section is for when you get a bit more advanced and want to learn about the endless possibilities in "loops", "globals", locals" and "tempfiles". Stata programming can save you from writing the same code over and over or from manually copy/pasting hundreds of csv files into a a single data file. Be warned: this rabbit hole is deep and can get time-consuming.
 
 ### Stata's dialog box and help function
@@ -75,7 +79,7 @@ If `db` doesn't solve your problem, then you can type
 help [insert function name]
 ```
 
-This will open the Stata help file that explains how to use the command and provides some examples. If that still doesn't do it, then it is time to ask google or perhaps a nerdy friend.
+This will open the Stata help file that explains how to use the command and provides some examples. If that still doesn't do it, then it is time to ask Google or a friend.
 
 ### Statalist - the Stata forum
 
@@ -87,4 +91,4 @@ Read. The. Guide. First.
 
 ### Conclusion
 
-I hope some of these ressources are useful to you. Remember, that whatever the question, Google probably knows the answer.
+I hope some of these ressources are useful to you. Feel free to reach out if you have questions, comments, or suggestions for other good Stata ressources for beginners.
