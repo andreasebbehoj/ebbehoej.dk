@@ -29,13 +29,14 @@ In this post, I'll share my favourite go-to ressources for whenever Stata sends 
 
 ### YouTube
 
-There are **a lot** of YouTube tutorials on Stata and it is a good place to start when learning Stata. Personally, I prefer [StataCorp's own YouTube channel](https://www.youtube.com/user/statacorp/playlists) with Chuck Huber, because 1) they have tons of tutorials covering both both simple and complicated tasks, 2) videos are conveniently categorized in playlists, and 3) most importantly, because Chuck's videos are short! There are a lot of other videos on YouTube that have better graphics or cover more complex stuff. But they can be hit'n miss and some of them spend ages explaining every excruciating detail of even the simplest functions. Not Chuck Huber, that guy is a surgeon.
+There are **a lot** of YouTube tutorials on Stata and it is a good place to start when learning Stata. Personally, I prefer [StataCorp's own YouTube channel](https://www.youtube.com/user/statacorp/playlists) with Chuck Huber, because 1) they have tons of tutorials covering both both simple and complicated tasks, 2) videos are conveniently categorized in playlists, and 3) most importantly, because Chuck's videos are short!
+There are a lot of other videos on YouTube that have better graphics or cover more complex stuff. But they can be hit'n miss and some of them spend ages explaining every excruciating detail of even the simplest functions. Not Chuck Huber, that guy is a surgeon.
 
 Some good playlists to start with:
 
-1) [Back-to-School link](https://www.youtube.com/playlist?list=PLN5IskQdgXWnnIVeA_Y0OBGmnw21fvcmU)) - quick introduction to the most common tasks like importing data, making simple graphs, doing t-tests, etc.
+1) [Back-to-School link](https://www.youtube.com/playlist?list=PLN5IskQdgXWnnIVeA_Y0OBGmnw21fvcmU)) - Quick introduction to the most common tasks. Importing data, box-plots, t-tests, the works.
 
-2) [Data Management](https://www.youtube.com/playlist?list=PLN5IskQdgXWmih67kPngkd0P022h1j82j)) - How to work with dates, convert text to numbers, reshaping data from wide to long format etc. Data management is by far the most time-consuming thing to learn in Stata, so it is a good place to invest some time.
+2) [Data Management](https://www.youtube.com/playlist?list=PLN5IskQdgXWmih67kPngkd0P022h1j82j)) - How to work with dates, convert text to numbers, reshaping data from wide to long format etc. Data management is by far the most time-consuming thing to learn in Stata, so I suggest you invest some time here.
 
 3) There are also specific playlist on [logistic regression](https://www.youtube.com/playlist?list=PLN5IskQdgXWmD5uP_XwBlu0F_ADPo7KNn), [survival analysis](https://www.youtube.com/playlist?list=PLN5IskQdgXWncs-_vy0KVNRn9xboYA6db), [power calculations](https://www.youtube.com/playlist?list=PLN5IskQdgXWmExGRjdy0s0VCdYnzGMZrT), [multiple imputations](https://www.youtube.com/playlist?list=PLN5IskQdgXWmhjxC5eopeRJwpI9G7Kp5w), and many others.
 
@@ -43,11 +44,11 @@ Some good playlists to start with:
 
 If you want to go oldschool and read a book (or e-book), I'd recommend:
 * Take Good Care of Your Data, by Svend Juul ([link](https://www.epidata.dk/php/downloadc.php?file=takecare.pdf))
+
+A short (and free!) little pamphlet. It gives quick overview on how to organize your data and work in Stata. Would especially recommend the sections on do-files.
+
 * An Introduction to Stata for Health Researchers, by Svend Juul ([link](https://www.stata.com/bookstore/introduction-stata-health-researchers/))
-
-The first is a short (and free!) little pamphlet. It a quick introduction on how to organize your data and work in Stata. Would especially recommend the sections on how to work with do-files. The sections on how to collect data in Epidata are also interesting but I would any day recommend using RedCAP for data collection.
-
-The second book is THE in-depth Stata bible. There is a reason why Svend Juul is considered something of a Stata legend. This book is a big part of it. The book covers _everything_ from importing data to advanced coding and analysis. Costs around 60$ and is most likely only for the truely dedicated/nerdy.
+The second book is THE in-depth Stata bible for the truly dedicated. There is a reason why Svend Juul is considered something of a Stata legend and this book is a big part of it. It covers _everything_ from importing data to advanced programming and analyses. Costs around 60$.
 
 ### Stata cheat sheets
 
@@ -59,9 +60,9 @@ The ([cheat sheets](https://www.stata.com/bookstore/stata-cheat-sheets/)) likely
 
 3. Data visualization & Plotting in Stata: Scatter plots (ie. XY-plots), histograms, bar charts, boxplots, how to combine graphs, and the list goes on.
 
-4. Data analysis: T-tests, linear regressions, non-parametric tests, time to event analyses, and much much more. This is what it all comes down to, in your endless hunt for that elusive p-value <.05.
+4. Data analysis: T-tests, linear regressions, non-parametric tests, time to event analyses, and much much more. This is what it all comes down to in your hunt for that ever-elusive p-value <.05.
 
-5. Programming: This section is for when you get a bit more advanced and want to learn about the endless possibilities in "loops", "globals", locals" and "tempfiles". Stata programming can save you from writing the same code over and over or from manually copy/pasting hundreds of csv files into a a single data file. Be warned: this rabbit hole is deep and can get time-consuming.
+5. Programming: This section is for when you get a bit more advanced and want to learn about the endless possibilities in "loops", "globals", locals" and "tempfiles". Stata programming can save you from writing the same code over and over or from manually copy/pasting  [hundreds of csv files into a a single data file]({{< ref "/post/stata-ressources-for-beginners/index.md" >}}). Be warned: this rabbit hole is deep and can get time-consuming.
 
 ### Stata's dialog box and help function
 
