@@ -52,7 +52,7 @@ The second book is THE in-depth Stata bible for the truly dedicated. There is a 
 
 ### Stata cheat sheets
 
-The ([cheat sheets](https://www.stata.com/bookstore/stata-cheat-sheets/)) likely provide the best overview of (almost) all commands you are ever going to need. Commands are neetly sorted after the different steps most analyses consists of:
+The [cheat sheets](https://www.stata.com/bookstore/stata-cheat-sheets/) likely provide the best overview of (almost) all commands you are ever going to need. Commands are neetly sorted after the different steps most analyses consists of:
 
 1. Data processing: Importing data, exploring data for weird outliers, removing duplicates, making new variables etc. There are commands for importing from Excel, text files etc.
 
@@ -84,9 +84,9 @@ This will open the Stata help file that explains how to use the command and prov
 
 ### Statalist - the Stata forum
 
-Whenever I google "stata how to something-something", ([Statalist](https://www.statalist.org/)) is usually the first hit I get. The layout is pretty old-fashioned but this is truly a goldmine of Stata poesi.
+Whenever I google "stata how to something-something", [Statalist](https://www.statalist.org/) is usually the first hit I get. The layout is pretty old-fashioned but this is truly a goldmine of Stata poesi.
 
-A word of warning before you ask a question at Statalist: [Read the guide ](https://www.statalist.org/forums/help#gfaq_postingadvice)first! Stata-aficionados from around the globe are willing to help you but they will bite, if you don't follow protocol. It is called Stata, not STATA. Use your real name. And woe you, if you ask a question without also submitting your code.
+A word of warning before you ask a question at Statalist: [Read their guide first](https://www.statalist.org/forums/help#gfaq_postingadvice)! Stata-aficionados from around the globe are willing to help you but they will bite, if you don't follow protocol. It is called Stata, not STATA. Use your real name. And woe you, if you ask a question without submitting your code.
 
 Read. The. Guide. First.
 
