@@ -1,8 +1,8 @@
 ---
-title: "Efficient data management with Stata and Redcap "
-subtitle: Data collection, typos, reproducerbility, identifiable patient data,
-  GDPR. Data management can be a pain. In this guide, I'll describe an efficient
-  workflow for how to use Redcap and Stata for data management.
+title: "Efficient data management in research - part 1"
+subtitle: Data collection, typos, reproducibility, identifiable patient data,
+  GDPR. Data management in research can be a pain. In this guide, I'll describe an efficient
+  workflow for how to use Redcap and Stata for collecting, organizing, and analyzing data.
 date: 2020-05-22T14:44:04.363Z
 summary: "123"
 draft: true
@@ -18,14 +18,34 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-Overview
+###Introduction
 
-\- Redcap and Stata
+####What is data management?
+Examples of issues
 
-
-
-Data collection in Redcap
-
+####How not do it
 
 
-API
+####A better way
+
+
+###Data collection in Redcap
+
+
+###Data management in Stata
+
+####The magic of do-files
+
+####Importing data
+
+####Correcting errors
+
+####Reproducible analyses
+
+###Storing data
+
+###Advanced concepts
+
+####Automating data import with Redcap's API
+
+####Uploading
