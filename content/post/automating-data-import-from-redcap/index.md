@@ -46,7 +46,10 @@ You can also picture the API as the waiter on a restaurant. You request some foo
 Enough with the theory, time to put it to use.
 
 
-##### Activating API in REDCap
+### Setup
+API is deactivated by default for security purposes, so you need to active it.
+
+##### REDCap settings
 In REDCap, the API is deactivated by default. To enable it, navigate to "User Rights", click on your username, click "Edit user privileges", tick "API Export" and save changes:
 {{< figure src="redcap-edit-user-privileges.png" title="" lightbox="true" >}}
 Only the project administrator can give you permission to use API. If you are project administrator but cannot find API in settings, then your institution probably restricted access to APIs and you need to contact the institution's REDCap super admin.
@@ -56,12 +59,31 @@ Once you has access, update the page. You should see a new "API" app in menu to 
 {{< figure src="redcap-api-menu.PNG" title="" lightbox="true" >}}
 If you see this, then the API is active.
 
-#### Getting the API key
+##### Getting the API key
 Click the API menu. Click "Generate API token"
 {{< figure src="redcap-generate-token.PNG" title="" lightbox="true" >}}
 
-A 32-character text string appears. This is your API key (or API Token in REDCap lingo). You will need it in a second.
+A 32-character text string appears. This is your API key (or API Token in REDCap lingo) that you will need in a second.
+Open Notepad (or TextEdit for MacOS), copy/paste the API token and save it as "APIKEY_redcap.txt" in the folder where you keep your Stata do file.
+
 A word of warning: The API key is confidential! Anyone who has the code can download your entire dataset including social security numbers and other patient identifiable data. Treat your API key as you would treat the code to your bank account.
+
+### cURL
+We will use the nifty little program cURL to call the API from Stata. cURL is short for _Client URL_. It is program used for interacting webpages and servers with commands instead of using the mouse. And it can communicate with APIs.
+
+It should be preinstalled on Windows 10 and newer versions of MacOS.To check if it is installed, first open the terminal by pressing the **Windows-key** and search for "Command Prompt" (in MacOS: press **Cmd** + **spacebar**). Once in the terminal, type `curl --V`  If the output looks something like this, you're good to go:
+{{< figure src="curl-preinstalled.PNG" title="" lightbox="true" >}}
+
+If cURL is not installed, follow [this guide](https://help.ubidots.com/en/articles/2165289-learn-how-to-install-run-curl-on-windows-macosx-linux).
+
+### In Stata
+Time to open Stata. We will use Stata's `shell` function to run cURL and interact with the REDCap API. The code is provided below and can be downloaded [here](LINK). You don't need to understand what is does (cannot say, I entirely understands it myself) but explanations are provided in comments. You need to correct _curlpath_ and _apiurl_ to match your
+```stata
+
+```
+
+To call the API in Stata, we will use the `shell` function in Stata to call the program cURL. It is preinstalled on Windows 10 and newer versions of MacOS. To ensure
 
 
 ##### Sources
+Most of this code is _heavily_ inspired by (red: copied from)
