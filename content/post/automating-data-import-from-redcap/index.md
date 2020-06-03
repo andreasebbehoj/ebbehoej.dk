@@ -51,22 +51,26 @@ In REDCap, the API is deactivated by default for security purposes, so you need 
 
 ##### REDCap settings
 To enable API, navigate to "User Rights", click on your username, click "Edit user privileges", tick "API Export" and save changes:
-{{< figure src="redcap-edit-user-privileges.PNG" title="" lightbox="true" >}}
+{{< figure src="redcap-edit-user-privileges.PNG" title="" lightbox="true" />}}
 Only the project administrator can give you permission to use API. If you are project administrator but cannot find API in settings, then your institution probably restricted access to APIs and you need to contact the institution's REDCap super admin.
 
 Note: Unless you know what you are doing or you are just playing around with a test database, I advice strongly against checking the "API Import/Update". If you fooled around with the API import function, you could inadvertently overwrite your entire database.
 
 Once you has access, update the page. You should see a new "API" app in menu to the left:
-{{< figure src="redcap-api-menu.PNG" title="" lightbox="true" >}}
+{{< figure src="redcap-api-menu.PNG" title="" lightbox="true" />}}
 If you see this, then the API is active.
 
 ##### Getting the API key
 Click the API menu. Click "Generate API token"
-{{< figure src="redcap-generate-token.PNG" title="" lightbox="true" >}}
+{{< figure src="redcap-generate-token.PNG" title="" lightbox="true" />}}
 
 A 32-character text string appears. This is your API key (or API Token in REDCap lingo) that you will need in a second.
 Open Notepad (or TextEdit for MacOS), copy/paste the API token and save it as "APIKEY_redcap.txt" in the folder where you keep your Stata do file:
+<<<<<<< HEAD
 {{< figure src="apikey-textfile.PNG" title="" lightbox="true" >}}
+=======
+{{< figure src="apikey-textfile.PNG" title="" lightbox="true" />}}
+>>>>>>> 5a43131863b5ad13de15d637d4f1e6987663da11
 
 A word of warning: The API key is confidential! Anyone who has the code can download your entire dataset including social security numbers and other patient identifiable data. Treat your API key as you would treat the code to your bank account.
 
@@ -74,7 +78,7 @@ A word of warning: The API key is confidential! Anyone who has the code can down
 We will use the nifty little program cURL to call the API from Stata. cURL is short for _Client URL_. It is program used for interacting webpages and servers with commands instead of using the mouse. And it can communicate with APIs.
 
 It should be preinstalled on Windows 10 and newer versions of MacOS.To check if it is installed, first open the terminal by pressing the **Windows-key** and search for "Command Prompt" (in MacOS: press **Cmd** + **spacebar**). Once in the terminal, type `curl --V`  If the output looks something like this, you're good to go:
-{{< figure src="curl-preinstalled.PNG" title="" lightbox="true" >}}
+{{< figure src="curl-preinstalled.PNG" title="" lightbox="true" />}}
 
 If cURL is not installed, follow [this guide](https://help.ubidots.com/en/articles/2165289-learn-how-to-install-run-curl-on-windows-macosx-linux).
 
@@ -138,13 +142,13 @@ erase `outfile'.csv // Delete csv file
 If you've used `import delimited` before, this part should be pretty straight forward. Note, that in my databases, the second variable is usually some unique study ID like a social security numbers. Since these IDs often contain leading zeroes ("0123456789"), I force Stata to import the second variable as a string with the option `stringcols(2)`, so Stata doesn't think that they are numbers and remove the first zero ("123456789"). To keep my computer neat'n tidy, I also ask Stata to `erase` the csv file.
 
 Last thing we need is to add the value labels from REDCap. You'll need to download the labels manually from REDCap:
-{{< figure src="redcap-export-1.PNG" title="Click Export Data" lightbox="true" >}}
-{{< figure src="redcap-export-2.PNG" title="Select Stata and Click Export Data" lightbox="true" >}}
-{{< figure src="redcap-export-3.PNG" title="Right-click the Stata logo and select Save File As" lightbox="true" >}}
-{{< figure src="redcap-export-4.PNG" title="Save in working folder and rename it RedcapValuelabel.do" lightbox="true" >}}
+{{< figure src="redcap-export-1.PNG" title="Click Export Data" lightbox="true" />}}
+{{< figure src="redcap-export-2.PNG" title="Select Stata and Click Export Data" lightbox="true" />}}
+{{< figure src="redcap-export-3.PNG" title="Right-click the Stata logo and select Save File As" lightbox="true" />}}
+{{< figure src="redcap-export-4.PNG" title="Save in working folder and rename it RedcapValuelabel.do" lightbox="true" />}}
 
 Open RedcapValuelabel.do and delete the first 7 lines of code, so it doesn't interfere with our do file:
-{{< figure src="redcap-export-5.PNG" title="" lightbox="true" >}}
+{{< figure src="redcap-export-5.PNG" title="" lightbox="true" />}}
 
 Save the changes and go back to your main do file. Note, that you need to do this every time you make changes to your REDCap database.
 
