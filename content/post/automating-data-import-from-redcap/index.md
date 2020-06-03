@@ -132,7 +132,7 @@ import delimited `outfile', ///
 	bindquote(strict) /// Fix quotes in text fields
 	stringcols(2) // Import second variable as string (Optional. Relevant if 2nd var is an ID var with leading zeroes such as SSN, CPR or similar study ID)
 erase `outfile'.csv // Delete csv file
-```stata
+```
 If you've used `import delimited` before, this part should be pretty straight forward. Note, that in my databases, the second variable is usually some unique study ID like a social security numbers. Since these IDs often contain leading zeroes ("0123456789"), I force Stata to import the second variable as a string with the option `stringcols(2)`, so Stata doesn't think that they are numbers and remove the first zero ("123456789"). To keep my computer neat'n tidy, I also ask Stata to `erase` the csv file.
 
 Last thing we need is to add the value labels from REDCap. You'll need to download the labels manually from REDCap:
