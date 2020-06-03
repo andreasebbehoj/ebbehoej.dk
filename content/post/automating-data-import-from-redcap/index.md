@@ -67,7 +67,6 @@ Click the API menu. Click "Generate API token"
 A 32-character text string appears. This is your API key (or API Token in REDCap lingo) that you will need in a second.
 Open Notepad (or TextEdit for MacOS), copy/paste the API token and save it as "APIKEY_redcap.txt" in the folder where you keep your Stata do file:
 {{< figure src="apikey-textfile.PNG" title="" lightbox="true" >}}
-{{< figure src="redcap-generate-token.PNG" title="" lightbox="true" >}}
 
 A word of warning: The API key is confidential! Anyone who has the code can download your entire dataset including social security numbers and other patient identifiable data. Treat your API key as you would treat the code to your bank account.
 
