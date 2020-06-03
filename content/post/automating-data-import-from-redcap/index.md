@@ -47,12 +47,13 @@ Enough with the theory, time to put it to use.
 
 
 ### Setup
-API is deactivated by default for security purposes, so you need to active it.
+In REDCap, the API is deactivated by default for security purposes, so you need to active it.
 
 ##### REDCap settings
-In REDCap, the API is deactivated by default. To enable it, navigate to "User Rights", click on your username, click "Edit user privileges", tick "API Export" and save changes:
-{{< figure src="redcap-edit-user-privileges.png" title="" lightbox="true" >}}
+To enable API, navigate to "User Rights", click on your username, click "Edit user privileges", tick "API Export" and save changes:
+{{< figure src="redcap-edit-user-privileges.PNG" title="" lightbox="true" >}}
 Only the project administrator can give you permission to use API. If you are project administrator but cannot find API in settings, then your institution probably restricted access to APIs and you need to contact the institution's REDCap super admin.
+
 Note: Unless you know what you are doing or you are just playing around with a test database, I advice strongly against checking the "API Import/Update". If you fooled around with the API import function, you could inadvertently overwrite your entire database.
 
 Once you has access, update the page. You should see a new "API" app in menu to the left:
@@ -65,7 +66,7 @@ Click the API menu. Click "Generate API token"
 
 A 32-character text string appears. This is your API key (or API Token in REDCap lingo) that you will need in a second.
 Open Notepad (or TextEdit for MacOS), copy/paste the API token and save it as "APIKEY_redcap.txt" in the folder where you keep your Stata do file:
-{{< figure src="apikey-textfile.png" title="" lightbox="true" >}}
+{{< figure src="apikey-textfile.PNG" title="" lightbox="true" >}}
 
 A word of warning: The API key is confidential! Anyone who has the code can download your entire dataset including social security numbers and other patient identifiable data. Treat your API key as you would treat the code to your bank account.
 
@@ -82,7 +83,7 @@ Time to open Stata. We will use Stata's `shell` function to run cURL and interac
 
 ##### Define settings for cURL
  First we need to supply the settings that cURL needs to communicate with REDCap:
-```
+```stata
 ***** Redcap_API.do *****
 version 16
 clear
@@ -99,7 +100,7 @@ local apiurl "https://redcap.au.dk/api/" // Link to REDCap database
 local outfile "redcap_export" // Name of the output file
 ```
 
-The first part imports the secret API key from the text file we saved previously. We could also just add the key directly in the do file by typing `local token = "1234567890ABCDEF"`. But if you did that and shared your do file or log with somebody, you've had to remember to remove the API key beforehand. Storing the API key in a separate file is safer. You've wouldn't keep your pin code in your wallet next to your credit card either, _right_?
+The first part imports the secret API key from the text file we saved previously. We could also just add the key directly in the do file by typing `local token = "1234567890ABCDE..."`. But if you did that and shared your do file or log with somebody, you've had to remember to remove the API key beforehand. Storing the API key in a separate file is safer. You've wouldn't keep your pin code in your wallet next to your credit card either, _right_?
 
 The second part stores the location where cURL is installed and the link to your institution's REDCap database. Update both _curlpath_ and _apiurl_ to match your system and database. You can also change the name of the final output file if you want.
 
@@ -107,7 +108,7 @@ Note: Stata deletes the content of all locals as soon as it has run the do file 
 
 ##### Run cURL
 Now it is time to run the code:
-```
+```stata
 *** Run cURL command
 shell  `curlpath' 	///
 	--output `outfile'.csv 		///
@@ -123,15 +124,15 @@ The last four lines specify that we want download all records (`token=record`), 
 
 Now, run the entire do file. After a couple of seconds, data should appear as a csv file in your folder. Magic!
 
-##### Import the output in Stata
+##### Import to Stata and add value label
 You've downloaded the data but it is still in a "raw" csv file. You'll want to convert it to Stata format and then add all those lovely value labels that you spent so much time writing in your REDCap database. Importing first:
-```
+```stata
 *** Convert CSV file to Stata format
 import delimited `outfile', ///
 	bindquote(strict) /// Fix quotes in text fields
 	stringcols(2) // Import second variable as string (Optional. Relevant if 2nd var is an ID var with leading zeroes such as SSN, CPR or similar study ID)
 erase `outfile'.csv // Delete csv file
-```
+```stata
 If you've used `import delimited` before, this part should be pretty straight forward. Note, that in my databases, the second variable is usually some unique study ID like a social security numbers. Since these IDs often contain leading zeroes ("0123456789"), I force Stata to import the second variable as a string with the option `stringcols(2)`, so Stata doesn't think that they are numbers and remove the first zero ("123456789"). To keep my computer neat'n tidy, I also ask Stata to `erase` the csv file.
 
 Last thing we need is to add the value labels from REDCap. You'll need to download the labels manually from REDCap:
@@ -143,8 +144,10 @@ Last thing we need is to add the value labels from REDCap. You'll need to downlo
 Open RedcapValuelabel.do and delete the first 7 lines of code, so it doesn't interfere with our do file:
 {{< figure src="redcap-export-5.PNG" title="" lightbox="true" >}}
 
-Save the changes and go back to your main do file. Now you only need to add a few lines of code to add the value labels and save the final output:
-```
+Save the changes and go back to your main do file. Note, that you need to do this every time you make changes to your REDCap database.
+
+Now you only need to add a few lines of code to add the value labels and save the final output:
+```stata
 ** Apply value labels (Optional).
 do RedcapValuelabel.do, nostop
 
@@ -161,7 +164,7 @@ If the code doesn't work, make sure you've specified the correct _apikey_ and _a
 
 ##### Download specific records with filter logic
 If you only need specific patients (records), you can use REDCap's filter logic to specify which records the API should to download. This can make downloading a lot faster if you have a large database. For example, you might only need the patients that were included in your study (included=1) and got the disease you are interested in (disease=1). To select these records, you only need to add a single line to the `shell` command:
-```
+```stata
 shell  `curlpath' 	///
 	--output `outfile'.csv 		///
 	--form token=`token'	///
@@ -174,7 +177,7 @@ shell  `curlpath' 	///
 
 ##### Download specific variables
 Similarly to the example above, you might not want to download all variables. This could be relevant if only want inclusion status and disease status but don't want to download patient identifiable data like social security numbers etc. You can then specify the variables you want to download by adding the `--form  fields[]=varname` option:
-```
+```stata
 shell  `curlpath' 	///
 	--output `outfile'.csv 		///
 	--form token=`token'	///
