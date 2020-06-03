@@ -67,6 +67,7 @@ Click the API menu. Click "Generate API token"
 A 32-character text string appears. This is your API key (or API Token in REDCap lingo) that you will need in a second.
 Open Notepad (or TextEdit for MacOS), copy/paste the API token and save it as "APIKEY_redcap.txt" in the folder where you keep your Stata do file:
 {{< figure src="apikey-textfile.PNG" title="" lightbox="true" >}}
+{{< figure src="redcap-generate-token.PNG" title="" lightbox="true" >}}
 
 A word of warning: The API key is confidential! Anyone who has the code can download your entire dataset including social security numbers and other patient identifiable data. Treat your API key as you would treat the code to your bank account.
 
@@ -119,7 +120,9 @@ shell  `curlpath' 	///
 	`apiurl'
 ```
 The code might seem a bit complex, but basically `shell` is Stata's way of asking Windows (or MacOS) to run a program on the computer, in this case curl.exe, which we previously stored in the local _curlpath_.
+
 The next two lines specify that cURL should save the output with the name stored in the local _outfile_ and that the API is found in the local _token_, which we both defined above.
+
 The last four lines specify that we want download all records (`token=record`), that we want the data in csv format (`format=csv`), that each observation should be on a separate row (`type=flat`), and that REDCap can be found in URL provided in the local _apiurl_.
 
 Now, run the entire do file. After a couple of seconds, data should appear as a csv file in your folder. Magic!
