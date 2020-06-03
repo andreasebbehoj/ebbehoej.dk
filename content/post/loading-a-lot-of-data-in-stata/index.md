@@ -35,13 +35,13 @@ We use Stata's mighty _loop_ function to do the copy-pasting for us. We'll do th
 2. Loop over files to import and append each file
 3. Export final data set
 
-You can download the csv- and Stata Do-file from the example [here](https://github.com/andreasebbehoj/ebbehoej.dk/tree/master/content/post/loading-a-lot-of-data-in-stata/Example) if you want to run it yourself.
+You can download the csv- and Stata Do-file from the example [here](https://github.com/andreasebbehoj/stata-examples/tree/master/Importing%20multiple%20csv%20files) if you want to run it yourself.
 
 ### Data structure
 Each patient had 2 csv-files that each looked somewhat like this:
 
 {{< figure src="id_data.png" title="example csv file (obviously, it is just gibberish and not real patient data)" lightbox="true" >}}
-Note, that number of rows or columns doesn't matter. However, for this code to work each column must represent a variable (preferly with variable name in first row) and each row represent an observation (which is the most common data structure). Importing files with other data structures is a story for another day.
+Note, that number of rows or columns doesn't matter. However, for this code to work each column must represent a variable (preferably with variable name in first row) and each row represent an observation (which is the most common data structure). Importing files with other data structures is a story for another day.
 
 All csv-files were stored in a single folder and systematically named: [ID number]-data-1.csv and [ID number]-data-2.csv:
 {{< figure src="filelist.png" title="Data structure in folder" lightbox="true" >}}
@@ -104,4 +104,4 @@ Other examples of use:
 * Importing txt-files (same principle as csv files above but change `dir` and `import delimited` to new file format)
 * Importing pdf files (use DocuFreezer to batch convert pdf files to txt files and same as above)
 * Convert individual csv data files to individual Stata files (simply add `save "newfilename.dta", replace` in bottom of loop)
-* Copy csv files from many different folders into a single folder using `copy` and `shell` (a bit more advanced, see this [post on Statalist](https://www.statalist.org/forums/forum/general-stata-discussion/general/1384969-using-copy-with-local-macros))
+* Copy csv files from many different folders into a single folder using `copy` and `shell` (a bit more advanced, see [this post on Statalist](https://www.statalist.org/forums/forum/general-stata-discussion/general/1384969-using-copy-with-local-macros))
