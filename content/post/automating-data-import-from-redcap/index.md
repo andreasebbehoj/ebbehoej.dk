@@ -7,8 +7,8 @@ subtitle: "Redcap is fantastic for storing your valuable research data. But
 date: 2020-05-23T19:42:50.925Z
 summary: "Redcap is fantastic for storing your valuable research data. But
   everytime you add or update results you need to download the newest data to
-  rerun your analyses, which quickly gets tedious. Luckily there is a better and
-  faster way: use Redcap's API!"
+  rerun your analyses, which quickly gets tedious. Luckily there is a faster way:
+  use Redcap's API!"
 draft: false
 featured: false
 authors:
@@ -169,7 +169,7 @@ save `outfile'.dta, replace
 The `nostop` option forces Stata to run the do file until the end, even if it encounters an error along the way. While this option is generally **not recommended**, it is practical in this specific setting, since you might later ask cURL to [only download specific variables from REDCap](#Download specific records with filter logic). If you were to only download some specific variables (_included_ and _disease_ for example), then RedcapValuelabel.do would produce an error and stop, when trying to label all the other variables that haven't been downloaded. Nostop prevents that.
 
 ### Final remarks
-And now you are done! Congratulations on becoming your office's resident API wizard. Hopefully, it all worked like a charm. See the sections below for troubleshooting and tips on other API features.
+And now you are done! Congratulations on becoming your office's resident API wizard. Hopefully, it all worked like a charm. See the sections below for [troubleshooting](#Troubleshooting) and tips on other [API features](#Download specific variables).
 
 ##### Troubleshooting
 If the code doesn't work, make sure you've specified the correct _apikey_ and _apiurl_, and that you run the entire do file from top to bottom. If that doesn't do it, try downloading my do file [from Github](https://github.com/andreasebbehoj/stata-examples/tree/master/Redcap%20API) and see if you've made a typo. If it still doens't work, then don't hesitate writing to me.
@@ -203,5 +203,6 @@ shell  `curlpath' 	///
 There are tons of options like this. Check sources for more inspiration.
 
 ##### Sources
-Most of this code is _heavily_ inspired by (i.e. copy-pasted from) this magnificent [code posted on Github](https://github.com/lsgs/REDCap-API-and-Stata). It is written by "Luke" who appears to be some REDCap wizard. Thanks Luke!
+Most of this code is _heavily_ inspired by (i.e. copy-pasted from) this magnificent [code posted on Github](https://github.com/lsgs/REDCap-API-and-Stata). It is written by "Luke" who appears to be REDCap's version of Dumbledore. Thanks Luke!
+
 He has also writting a bunch do files for doing more complex stuff with the API that you should check out, if you want to download metadata, download specific data forms, reports etc, or if you want to learn how to upload data.
