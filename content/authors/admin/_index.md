@@ -18,12 +18,12 @@ organizations:
   url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: Newly minted MD + Adrenal research + Stata hobbyist
+bio: Newly minted MD + Adrenal researcher + Stata hobbyist
 
 interests:
 - Adrenal Tumors
 - Epidemiology
-- Stata enthusiast
+- Stata
 
 education:
   courses:
