@@ -202,7 +202,7 @@ shell  `curlpath' 	///
 ```
 There are tons of options like this. Check sources for more inspiration.
 
-#####Sources
+### Sources
 Most of this code is _heavily_ inspired by (i.e. copy-pasted from) this magnificent [code posted on Github](https://github.com/lsgs/REDCap-API-and-Stata). It is written by "Luke" who appears to be REDCap's version of Dumbledore. Thanks Luke!
 
 He has also writting a bunch do files for doing more complex stuff with the API that you should check out, if you want to download metadata, download specific data forms, reports etc, or if you want to learn how to upload data.
