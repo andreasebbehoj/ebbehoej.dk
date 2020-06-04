@@ -26,17 +26,17 @@ image:
   preview_only: false
 ---
 {{% toc %}}
-### Introduction
+###Introduction
 Most (sane) researchers probably use Redcap to collect and store their valuable research data. The advances of using REDCap are plentiful: Reproducibility, automatic backups, data safety, GCP-compliant logging, etc. If you still organize your hard-earned data in an Excel  spreadsheet (yikes!) then return here when you have seen the REDCap light.
 
 While REDCap is amazing, is does has one minor disadvantage. Everytime you add a new record, correct an error or change anything in REDCap, you need to download your data again to your computer before you can re-run your analysis. And since each file you export from REDCap has a new an unique name, you also to update your Stata do-file. This my friend is repetitive and boring monkey work. And nobody likes monkey work.
 
 Luckily, you can automate the process of downloading data directly within Stata. All it takes is five minutes and a few lines of code in your do-file.
 
-##### TL;DR
+#####TL;DR
 If you are the impatient "I saw Harry Potter but never read the books"-type, then you can [download the Stata do file here](https://github.com/andreasebbehoj/stata-examples/tree/master/Redcap%20API). If you are the type that want all the nitty-gritty details, then read on.
 
-##### What is API?
+#####What is API?
 API stands for *Application Program Interface*. It is basically a programming language that computer programs use to communicate with each other.
 
 Let's use the Facebook app as an example. What happens when you check your newsfeed?:
@@ -50,10 +50,10 @@ You can also picture the API as the waiter on a restaurant. You request some foo
 Enough with the theory. Time to put it to use.
 
 
-### Setup
+###Setup
 In REDCap, the API is deactivated by default for security purposes, so you need to active it.
 
-##### REDCap settings
+#####REDCap settings
 To enable API, navigate to "User Rights", click on your username, click "Edit user privileges", tick "API Export" and save changes:
 {{< figure src="redcap-edit-user-privileges.PNG" title="" lightbox="true" >}}
 Only the project administrator can give you permission to use API. If you are project administrator but cannot find API in settings, then your institution probably restricted access to APIs and you need to contact the institution's REDCap super admin.
@@ -65,7 +65,7 @@ If you see this, then the API is active.
 Note: Unless you know what you are doing or you are just playing around with a test database, I advice strongly against checking the "API Import/Update". If you fool around with the API import function, you can in theory overwrite your entire database.
 
 
-##### Getting the API key
+#####Getting the API key
 Click the API menu. Click "Generate API token"
 {{< figure src="redcap-generate-token.PNG" title="" lightbox="true" >}}
 
@@ -76,7 +76,7 @@ We need to save it for later. Open Notepad (or TextEdit for MacOS), copy/paste t
 
 **A word of warning**: The API key is confidential! Anyone with the API key can download your entire dataset including social security numbers and other patient identifiable data. Treat your API key as you would treat your pin code to your credit card.
 
-##### cURL
+#####cURL
 We will use the nifty little program, cURL, to communicate with the API. cURL is short for _Client URL_. It is program used for interacting webpages and servers with commands instead of using mouse and keyboard.
 
 It should be preinstalled on Windows 10 and newer versions of MacOS. To check if it is installed, first open the terminal by pressing the **Windows-key** and search for "Command Prompt" (in MacOS: press **Cmd** + **spacebar**). Once in the terminal, type `curl --V`. If the output looks something like this, you're good to go:
@@ -84,10 +84,10 @@ It should be preinstalled on Windows 10 and newer versions of MacOS. To check if
 
 If cURL is not installed, follow [this guide](https://help.ubidots.com/en/articles/2165289-learn-how-to-install-run-curl-on-windows-macosx-linux).
 
-### In Stata
+###In Stata
 Time to open Stata. We will use Stata's `shell` function to run cURL and interact with the REDCap API. You can copy/paste the step-by-step guide below into your own do file or download the entire code [here](https://github.com/andreasebbehoj/stata-examples/tree/master/Redcap%20API).
 
-##### Define settings for cURL
+#####Define settings for cURL
  First we need to supply the settings that cURL needs to communicate with REDCap:
 ```stata
 ***** Redcap_API.do *****
@@ -112,7 +112,7 @@ The second part stores the location where cURL is installed and the link to your
 
 Note: Stata deletes the content of all locals as soon as it has run the do file until the end. Therefore, you need to run the entire do file from the top to bottom for this code to work. Otherwise, Stata will just throw angry red errors in your face.
 
-##### Run cURL
+#####Run cURL
 Now it is time to run cURL:
 ```stata
 *** Run cURL command
@@ -134,7 +134,7 @@ The last line specify that REDCap can be found in URL provided in the local _api
 
 Now, run the entire do file. A window should pop up, and after a few seconds, data should appear as a csv file in your folder. _Accio data_. It's freaking magic!
 
-##### Import to Stata and add value label
+#####Import to Stata and add value label
 You've downloaded the data but it is still in a "raw" csv file. You'll want to convert it to Stata format and then add all those lovely value labels that you spent so much time writing in your REDCap database.
 
 Importing first:
@@ -168,13 +168,20 @@ save `outfile'.dta, replace
 ```
 The `nostop` option forces Stata to run the do file until the end, even if it encounters an error along the way. While this option is generally **not recommended**, it is practical in this specific setting, since you might later ask cURL to [only download specific variables from REDCap](#Download specific records with filter logic). If you were to only download some specific variables (_included_ and _disease_ for example), then RedcapValuelabel.do would produce an error and stop, when trying to label all the other variables that haven't been downloaded. Nostop prevents that.
 
-### Final remarks
+###Final remarks
 And now you are done! Congratulations on becoming your office's resident API wizard. Hopefully, it all worked like a charm. See the sections below for [troubleshooting](#Troubleshooting) and tips on other [API features](#Download specific variables).
 
+<<<<<<< HEAD
 ### Troubleshooting
 If the code doesn't work, make sure you've specified the correct _apikey_ and _apiurl_, and that you run the entire do file from top to bottom. If that doesn't do it, try downloading my do file [from Github](https://github.com/andreasebbehoj/stata-examples/tree/master/Redcap%20API) and see if you've made a typo. If it still doens't work, then don't hesitate writing to me.
 
 ### Download specific records with filter logic
+=======
+#####Troubleshooting
+If the code doesn't work, make sure you've specified the correct _apikey_ and _apiurl_, and that you run the entire do file from top to bottom. If that doesn't do it, try downloading my do file [from Github](https://github.com/andreasebbehoj/stata-examples/tree/master/Redcap%20API) and see if you've made a typo. If it still doens't work, then don't hesitate writing to me.
+
+#####Download specific records with filter logic
+>>>>>>> defb400cb74acd4fe9625f1606e46e2a476148f7
 If you only need specific patients (records), you can use REDCap's filter logic to specify which records the API should to download. This can make downloading a lot faster if you have a large database. For example, you might only need the patients that were included in your study (included=1) and got the disease you are interested in (disease=1). To select these records, you only need to add a single line to the `shell` command:
 ```stata
 shell  `curlpath' 	///
@@ -187,7 +194,7 @@ shell  `curlpath' 	///
 	`apiurl'
 ```
 
-##### Download specific variables
+#####Download specific variables
 Similarly to the example above, you might not want to download all variables. This could be relevant if only want inclusion status and disease status but don't want to download patient identifiable data like social security numbers etc. You can then specify the variables you want to download by adding the `--form  fields[]=varname` option:
 ```stata
 shell  `curlpath' 	///
@@ -202,7 +209,7 @@ shell  `curlpath' 	///
 ```
 There are tons of options like this. Check sources for more inspiration.
 
-##### Sources
+#####Sources
 Most of this code is _heavily_ inspired by (i.e. copy-pasted from) this magnificent [code posted on Github](https://github.com/lsgs/REDCap-API-and-Stata). It is written by "Luke" who appears to be REDCap's version of Dumbledore. Thanks Luke!
 
 He has also writting a bunch do files for doing more complex stuff with the API that you should check out, if you want to download metadata, download specific data forms, reports etc, or if you want to learn how to upload data.
