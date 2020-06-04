@@ -166,10 +166,10 @@ do RedcapValuelabel.do, nostop
 ** Save
 save `outfile'.dta, replace
 ```
-The `nostop` option forces Stata to run the do file until the end, even if it encounters an error along the way. While this option is generally **not recommended**, it is practical in this specific setting, since you might later ask cURL to [only download specific variables from REDCap](#Download specific records with filter logic). If you were to only download some specific variables (_included_ and _disease_ for example), then RedcapValuelabel.do would produce an error and stop, when trying to label all the other variables that haven't been downloaded. Nostop prevents that.
+The `nostop` option forces Stata to run the do file until the end, even if it encounters an error along the way. While this option is generally **not recommended**, it is practical in this specific setting, since you might later ask cURL to [only download specific variables from REDCap](#Download-specific-records-with-filter-logic). If you were to only download some specific variables (_included_ and _disease_ for example), then RedcapValuelabel.do would produce an error and stop, when trying to label all the other variables that haven't been downloaded. Nostop prevents that.
 
 ### Final remarks
-And now you are done! Congratulations on becoming your office's resident API wizard. Hopefully, it all worked like a charm. See the sections below for [troubleshooting](#Troubleshooting) and tips on other [API features](#Download specific variables).
+And now you are done! Congratulations on becoming your office's resident API wizard. Hopefully, it all worked like a charm. See the sections below for troubleshooting and tips on other API features.
 
 ### Troubleshooting
 If the code doesn't work, make sure you've specified the correct _apikey_ and _apiurl_, and that you run the entire do file from top to bottom. If that doesn't do it, try downloading my do file [from Github](https://github.com/andreasebbehoj/stata-examples/tree/master/Redcap%20API) and see if you've made a typo. If it still doens't work, then don't hesitate writing to me.
