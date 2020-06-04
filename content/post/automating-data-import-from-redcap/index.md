@@ -171,17 +171,10 @@ The `nostop` option forces Stata to run the do file until the end, even if it en
 ###Final remarks
 And now you are done! Congratulations on becoming your office's resident API wizard. Hopefully, it all worked like a charm. See the sections below for [troubleshooting](#Troubleshooting) and tips on other [API features](#Download specific variables).
 
-<<<<<<< HEAD
 ### Troubleshooting
 If the code doesn't work, make sure you've specified the correct _apikey_ and _apiurl_, and that you run the entire do file from top to bottom. If that doesn't do it, try downloading my do file [from Github](https://github.com/andreasebbehoj/stata-examples/tree/master/Redcap%20API) and see if you've made a typo. If it still doens't work, then don't hesitate writing to me.
 
 ### Download specific records with filter logic
-=======
-#####Troubleshooting
-If the code doesn't work, make sure you've specified the correct _apikey_ and _apiurl_, and that you run the entire do file from top to bottom. If that doesn't do it, try downloading my do file [from Github](https://github.com/andreasebbehoj/stata-examples/tree/master/Redcap%20API) and see if you've made a typo. If it still doens't work, then don't hesitate writing to me.
-
-#####Download specific records with filter logic
->>>>>>> defb400cb74acd4fe9625f1606e46e2a476148f7
 If you only need specific patients (records), you can use REDCap's filter logic to specify which records the API should to download. This can make downloading a lot faster if you have a large database. For example, you might only need the patients that were included in your study (included=1) and got the disease you are interested in (disease=1). To select these records, you only need to add a single line to the `shell` command:
 ```stata
 shell  `curlpath' 	///
@@ -194,7 +187,7 @@ shell  `curlpath' 	///
 	`apiurl'
 ```
 
-#####Download specific variables
+### Download specific variables
 Similarly to the example above, you might not want to download all variables. This could be relevant if only want inclusion status and disease status but don't want to download patient identifiable data like social security numbers etc. You can then specify the variables you want to download by adding the `--form  fields[]=varname` option:
 ```stata
 shell  `curlpath' 	///
