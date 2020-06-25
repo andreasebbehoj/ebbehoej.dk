@@ -68,4 +68,4 @@ subtitle = ""
 +++
 {{< figure library="true" src="headers/stata-16.png" title="" lightbox="true" >}}
 Over the last five years, I have spend quite a lot of time working with Stata and health registry data. In the beginning it was a struggle. Over time it became a hobby. Here I will share some of the tips, tricks, and do-files, I picked up along the way.  
-Please let me know if you have suggestions, spot errors or perhaps even find it useful.
+Please let me know if you have suggestions, spot errors, or perhaps even find it useful.
