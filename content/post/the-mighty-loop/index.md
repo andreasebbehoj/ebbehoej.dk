@@ -44,7 +44,7 @@ Don't worry, if it seems a bit abstract. It is a lot easier to understand when w
 
 
 ### Example: Simple loop through list of variables
-This foreach loop runs through all variables and make a histogram for each.
+This foreach loop runs through all variables and makes a histogram and t-test for each variable.
 ```stata
 sysuse auto, clear
 foreach var in price mpg rep78 headroom trunk weight length turn displacement gear_ratio {
@@ -56,9 +56,7 @@ foreach var in price mpg rep78 headroom trunk weight length turn displacement ge
 ```
 Now histograms and t-tests are repeated for all variables in the varlist (price mpg headroom etc), by referring to the _var_. Writing this loop was way faster than copying the same lines of code for all variables. And if we decide to change the layout of the histogram or add more code, we only have to change the code within the loop instead of changing 200 lines of copy/paste. Smart.
 
-Note, that `display` actually isn't necessary for this loop to run. I just prefer to start loops with the `display` command, so Stata tells which variable it is currently processing. This is helpful if (when!) you need debug some unforeseen error in your loop.
-
-See below for more examples on what you can do with loops.
+Note, that `display` actually isn't necessary for this loop to run. I just prefer to start loops with the `display` command, so Stata tells me which variable it is currently processing. This is helpful if (when!) you need debug some unforeseen error in your loop.
 
 ### Example: Export results from tables
 While the example above is pretty neat, it would be nice if the p-values from the t-test were stored somewhere, so we don't have to manually copy-paste from Stata's output into our paper/table/whatever. This can be achieved by running the same loop as above but exporting results to a txt file:
