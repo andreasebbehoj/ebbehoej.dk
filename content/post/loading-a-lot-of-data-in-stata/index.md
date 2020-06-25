@@ -8,7 +8,7 @@ featured: false
 authors:
   - admin
 tags:
-  - "stata"
+  - stata
 categories:
   - stata
 image:

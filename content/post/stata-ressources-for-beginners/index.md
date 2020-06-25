@@ -15,7 +15,7 @@ authors:
 tags:
   - stata
 categories:
-  - "stata"
+  - stata
 image:
   filename: featured
   focal_point: Smart
