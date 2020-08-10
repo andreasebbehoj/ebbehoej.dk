@@ -101,7 +101,11 @@ file open text using APIKEY_redcap.txt, read text // Txt file containing API key
 file read text token // Store API key as local 'token'
 
 *** cURL Settings (update to match your system and REDCap)
+<<<<<<< HEAD
 local curlpath "C:/Windows/System32/curl.exe" // Folder where cURL is installed (MacOS: "/usr/bin/curl")
+=======
+local curlpath "C:\Windows\System32\curl.exe" // Folder where cURL is installed (MacOS: "/usr/bin/curl")
+>>>>>>> ea5decdec0351372963c8df767279a09ffa9d0fb
 local apiurl "https://redcap.au.dk/api/" // Link to REDCap database
 local outfile "redcap_export" // Name of the output file
 ```
