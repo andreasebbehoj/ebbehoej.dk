@@ -183,7 +183,7 @@ shell  `curlpath' 	///
 	--form content=record 	///
 	--form format=csv 		///
 	--form type=flat 		///
-  --form filterLogic="[included]='1' and [disease]='1'"
+  --form filterLogic="[included]='1' and [disease]='1'"   ///
 	`apiurl'
 ```
 
