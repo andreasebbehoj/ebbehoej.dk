@@ -79,7 +79,7 @@ We need to save it for later. Open Notepad (or TextEdit for MacOS), copy/paste t
 ##### cURL
 We will use the nifty little program, cURL, to communicate with the API. cURL is short for _Client URL_. It is program used for interacting webpages and servers with commands instead of using mouse and keyboard.
 
-It should be preinstalled on Windows 10 and newer versions of MacOS. To check if it is installed, first open the terminal by pressing the **Windows-key** and search for "Command Prompt" (in MacOS: press **Cmd** + **spacebar**). Once in the terminal, type `curl --V`. If the output looks something like this, you're good to go:
+It should be preinstalled on Windows 10 and newer versions of MacOS. To check if it is installed, first open the terminal by pressing the **Windows-key** and search for "Command Prompt" (in MacOS: press **Cmd** + **spacebar** and search for "Terminal"). Once in the terminal, type `curl --V` (MacOS: curl --version). If the output looks something like this, you're good to go:
 {{< figure src="curl-preinstalled.PNG" title="" lightbox="true" >}}
 
 If cURL is not installed, follow [this guide](https://help.ubidots.com/en/articles/2165289-learn-how-to-install-run-curl-on-windows-macosx-linux).
@@ -91,7 +91,7 @@ Time to open Stata. We will use Stata's `shell` function to run cURL and interac
  First we need to supply the settings that cURL needs to communicate with REDCap:
 ```stata
 ***** Redcap_API.do *****
-version 16
+version 15
 clear
 file close _all
 set more off
@@ -101,7 +101,7 @@ file open text using APIKEY_redcap.txt, read text // Txt file containing API key
 file read text token // Store API key as local 'token'
 
 *** cURL Settings (update to match your system and REDCap)
-local curlpath "C:\Windows\System32\curl.exe" // Folder where cURL is installed
+local curlpath "C:/Windows/System32/curl.exe" // Folder where cURL is installed (MacOS: "/usr/bin/curl")
 local apiurl "https://redcap.au.dk/api/" // Link to REDCap database
 local outfile "redcap_export" // Name of the output file
 ```
@@ -183,7 +183,7 @@ shell  `curlpath' 	///
 	--form content=record 	///
 	--form format=csv 		///
 	--form type=flat 		///
-  --form filterLogic="[included]='1' and [disease]='1'"
+  --form filterLogic="[included]='1' and [disease]='1'"   ///
 	`apiurl'
 ```
 
