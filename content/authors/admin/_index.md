@@ -21,19 +21,20 @@ organizations:
 bio: Newly minted MD + Adrenal researcher + Stata hobbyist
 
 interests:
-- Adrenal Tumors
+- Adrenal Research
 - Epidemiology
-- Stata
+- Stata Statistical Software
+- Cooking
 
 education:
   courses:
-  - course: PhD in epidemiology of adrenal tumors
+  - course: PhD, Adrenal Tumors: Causes and Consequences
     institution: Aarhus University
     year: 2019
   - course: MD
     institution: Aarhus University
     year: 2020
-  - course: Pre-grad research year on pheochromocytoma
+  - course: Pre-grad research year, The Epidemiology of Pheochromocytoma
     institution: Aarhus University
     year: 2016
 
@@ -75,6 +76,6 @@ user_groups:
 - Visitors
 ---
 
-I am a PhD student at Aarhus University. My research focus is the diagnosis and prognosis of adrenal tumors. I spend a lot of time on Stata and also do a bit of teaching.  
+I am a PhD student at Aarhus University, Denmar. I study the diagnosis and prognosis of adrenal tumors, and spend _a lot_ of time working with Stata.
 
-On my website, I will share Stata code that others might find useful and the occasional update on my PhD project.  
+On this website, I'll upload Stata tips that others might find useful and share the occasional update on my PhD project.
