@@ -28,13 +28,13 @@ interests:
 
 education:
   courses:
-  - course: PhD - Adrenal Tumors: Causes and Consequences (ongoing)
+  - course: PhD, Adrenal Tumors - Causes and Consequences (ongoing)
     institution: Aarhus University
     year: 2019
   - course: MD
     institution: Aarhus University
     year: 2020
-  - course: Pre-grad research year - The Epidemiology of Pheochromocytoma
+  - course: Research year, The Epidemiology of Pheochromocytoma
     institution: Aarhus University
     year: 2016
 
