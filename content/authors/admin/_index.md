@@ -76,6 +76,6 @@ user_groups:
 - Visitors
 ---
 
-I am a PhD student at Aarhus University, Denmar. I study the diagnosis and prognosis of adrenal tumors, and spend _a lot_ of time working with Stata.
+I am a PhD student at Aarhus University, Denmark. I study the diagnosis and prognosis of adrenal tumors, and spend _a lot_ of time working with Stata.
 
 On this website, I'll upload Stata tips that others might find useful and share the occasional update on my PhD project.
