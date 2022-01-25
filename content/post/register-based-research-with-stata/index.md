@@ -1,10 +1,12 @@
 ---
 title: Register-based research with Stata
-subtitle: A series on how to use Stata for common data management problems registry-data
+subtitle: A series on how to handle common issues when working with
+  registry-data in Stata
 date: 2022-01-25T12:10:42.654Z
 summary: Stata is excellent for register-based research, but the learning curve
-  can be steep and it is easy to get lost when you are sitting on a mountain of
-  data. This guide provides you with some climbing gear for the journey.
+  can be steep and it is easy to get lost when you are standing in front of a
+  mountain of data. This series provides you with some climbing gear for the
+  journey.
 draft: true
 featured: false
 tags:
@@ -16,13 +18,19 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-Stata has been my preferred tool for epidemiological research using health registry data for the last 5-6 years. It has some really efficient commands for combining data from different registries and reshaping them to fit your statistical needs. I have probably spent a third of my PhD writing different variations of *merge*, *reshape*, and *append*. Once you get the hang of it, Stata absolutely excels at data management.
+Stata has been my preferred tool for managing health registry data for epidemiological research over the last 5-6 years. It has some really efficient commands for combining data from different registries and reshaping them to fit your statistical needs. Once you get the hang of it, Stata absolutely excels at data management.
 
-But the devil is in the detail, and in this case, the devil is hiding in the word *once*. Because the learning curve can be steep with Stata. And you can quickly lose track of things when you are trying to combine the data on 100,000 patients from the "t_population" file with their 1,000,000 hospital contacts from "t_adm". And then you need to combine each hospital contact with 5-10 diagnosis codes from "t_diag" and perhaps even some surgical procedures from "t_opr". This is this the point where you wish you had instead become a 'real researcher', doing cool lab stuff with only 8 participants and managing your data in a old-fashioned notebook. 
+But the devil is in the detail, and in this case, the devil is hiding in the word *once*. Because the learning curve can be steep with Stata. And you can quickly lose track of things when you are trying to combine the data on 100,000 patients from the "t_population" file with their 1,000,000 hospital contacts from "t_adm". And then you need to combine each hospital contact with 5-10 diagnosis codes from "t_diag" and perhaps even some surgical procedures from "t_opr". This is this the point where you wish you were a 'real researcher'. You know, wearing a coat, doing cool stuff in the lab and, critically, being able to manage your dataset in a single spreadsheet. But I digress. 
 
-Don't fret. You can solve 99% of your data problems with *reshape* and *merge*, and, hopefully, this series of posts will cover the rest. 
+Don't panic, just because your dataset is huge and messy. 99% of your data problems can be solved with *reshape* and *merge*, and -hopefully- this guide will cover the rest. 
 
-# Registry-based research
+
+
+# Before we begin ...
+
+A bit of house-keeping before we get to the juicy stuff. What is registry-based research, how to download the data example we will be using, etc.
+
+## Registry-based research
 
 I suspect that if you (and three other people in the world, who found this guide), probably know what registry-based research is. But just so everybody is on the same page: Registry-based research is exactly what the name suggest: Investigation of some research question using data from a registry. 
 
@@ -34,4 +42,6 @@ In my world of medicine and epidemiology that would typical mean:
 
 3) or both 1 and 2 in the same study.
 
-You can read *a bit* more in EMA's [33-page guideline ](https://www.ema.europa.eu/en/guideline-registry-based-studies)for registry-based research, if you are so inclined.
+You can read *a bit* more in EMA's [33-page guideline ](https://www.ema.europa.eu/en/guideline-registry-based-studies)for registry-based research, if you are so inclined. 
+
+## Example data
