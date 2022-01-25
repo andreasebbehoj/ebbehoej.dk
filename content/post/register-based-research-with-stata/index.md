@@ -30,7 +30,7 @@ In my world of medicine and epidemiology that would typical mean:
 
 1) identify a cohort of patients with some condition, [say rare adrenal tumors](https://www.dovepress.com/pheochromocytoma-in-denmark-during-1977-2016-validating-diagnosis-code-peer-reviewed-fulltext-article-CLEP), using a combination of registered diagnosis codes and surgical procedures,
 
-2) assess risk of outcome Y in a database, such as [estimating risk of cardiovascular disease](https://pubmed.ncbi.nlm.nih.gov/29374097/) from hospital contacts  or [risk of unemployment](https://ssrn.com/abstract=4000566) in a public administrative registry of transfer payments, 
+2) assess risk of an outcome, such as [estimating risk of cardiovascular disease](https://pubmed.ncbi.nlm.nih.gov/29374097/) from hospital contacts or [unemployment rates](https://ssrn.com/abstract=4000566) in a public administrative registry of transfer payments, 
 
 3) or both 1 and 2 in the same study.
 
