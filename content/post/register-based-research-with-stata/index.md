@@ -1,7 +1,6 @@
 ---
-title: Register-based research with Stata
-subtitle: A series on how to handle common issues when working with
-  registry-data in Stata
+title: Register-based research with Stata, part 1
+subtitle: Introduction to the guide and the data example
 date: 2022-01-25T12:10:42.654Z
 summary: Stata is excellent for register-based research, but the learning curve
   can be steep and it is easy to get lost when you are standing in front of a
@@ -12,7 +11,11 @@ featured: false
 authors:
   - admin
 tags:
-  - stata;registry-based;epidemiology
+  - stata
+  - registry-based
+  - epidemiology
+  - landspatientregisteret
+  - DNPR
 categories:
   - Stata
 image:
@@ -22,11 +25,21 @@ image:
 ---
 Stata has been my preferred tool for managing health registry data for epidemiological research over the last 5-6 years. It has some really efficient commands for combining data from different registries and reshaping them to fit your statistical needs. Once you get the hang of it, Stata absolutely excels at data management.
 
-But the devil is in the detail, and in this case, the devil is hiding in the word *once*. Because the learning curve can be steep with Stata. And you can quickly lose track of things when you are trying to combine the data on 100,000 patients from the "t_population" file with their 1,000,000 hospital contacts from "t_adm". And then you need to combine each hospital contact with 5-10 diagnosis codes from "t_diag" and perhaps even some surgical procedures from "t_opr". This is this the point where you wish you were a 'real researcher'. You know, wearing a coat, doing cool stuff in the lab and, critically, being able to manage your dataset in a single spreadsheet. But I digress. 
+But the devil is in the detail, and in this case, the devil is hiding in the word *once*. Because the learning curve can be steep with Stata. And you can quickly lose track of things when you are trying to combine the data on 100,000 patients with data on their 1,000,000 hospital contacts, which are again linked to 10,000,000 diagnosis codes and surgery codes. This is this the point where you wish you were a 'real researcher'. You know, wearing a coat, doing cool stuff in the lab and being able to manage the data of your 20 patients in a single spreadsheet. 
 
-Don't panic, just because your dataset is huge and messy. 99% of your data problems can be solved with *reshape* and *merge*, and -hopefully- this guide will cover the rest. 
+But don't panic yet. 99% of your data problems can probably be solved in Stata with *reshape* and *merge*, and the rest will hopefully be covered in this guide series. 
 
+I plan to write a series of posts on how to tackle the issues, listed below: 
 
+* How to combine annual registry files with append (t_adm_1977 t_adm_1978 ... t_adm_2021)
+* How to merge registry data split across multiple minor data sets
+* How to translate codes to text (e.g. ICD-8 and ICD-10 diagnoses, surgery codes, etc.)
+* How to translate codes to text, when codes change meaning over time (e.g. department names)
+* How to download population data using Statistics Denmark's API directly from Stata.
+
+Some topics are common challenges, which everybody working with registry data will face. Other topics might showcase an advanced technique or perhaps only be relevant for researchers working with Danish registries. 
+
+I'll add links to the list as soon as I finish a new post. But the deadline for my PhD thesis is closing in, so it might take some time. Write me, if you think I should prioritize a particular data management issue, which has been grinding your gears (too). 
 
 # Before we begin ...
 
@@ -38,13 +51,9 @@ I suspect that if you (and three other people in the world, who found this guide
 
 In my world of medicine and epidemiological research that would often mean:
 
-1) identify a cohort of patients with some condition, [say rare adrenal tumors](https://www.dovepress.com/pheochromocytoma-in-denmark-during-1977-2016-validating-diagnosis-code-peer-reviewed-fulltext-article-CLEP), using a combination of registered diagnosis codes and surgical procedures,
-
-2) assess risk of an outcome, such as [estimating risk of cardiovascular disease](https://pubmed.ncbi.nlm.nih.gov/29374097/) from hospital contacts or [unemployment rates](https://ssrn.com/abstract=4000566) in a public administrative registry of transfer payments, 
-
-3) or both 1 and 2 in the same study.
-
-You can read *a bit* more in EMA's [33-page guideline ](https://www.ema.europa.eu/en/guideline-registry-based-studies)for registry-based research, if you are so inclined. 
+1. identify a cohort of patients with some condition, [say rare adrenal tumors](https://www.dovepress.com/pheochromocytoma-in-denmark-during-1977-2016-validating-diagnosis-code-peer-reviewed-fulltext-article-CLEP), using a combination of registered diagnosis codes and surgical procedures,
+2. assess risk of an outcome, such as [estimating risk of cardiovascular disease](https://pubmed.ncbi.nlm.nih.gov/29374097/) from hospital contacts or [unemployment rates](https://ssrn.com/abstract=4000566) in a public administrative registry of transfer payments, 
+3. or both 1 and 2 in the same study.
 
 ## Example data - The Danish National Patient Registry
 
@@ -60,10 +69,9 @@ You can download the completely made-up dataset on Github (INSERT LINK). Or you 
 *** Check if files are present
 
 *** Download from github
-
 ```
 
-Ones this is working, we are ready to get our hands dirty doing real data management on our fake registry data.  !!!INSERT LINK TO FIRST POST!!! 
+Once this is working, we are ready to get our hands dirty doing real data management on our fake registry data.  !!!INSERT LINK TO FIRST POST!!! 
 
 Or you can read the detailed description of DNPR data before you move on. 
 
@@ -96,4 +104,8 @@ The table with surgery codes. t_opr is the name of the old registry (1977-1995) 
 
 ### Other NPDR datasets
 
-There are plenty of other datasets: t_foedsler with specific data on deliveries, t_sksube on various tests and examinations, t_pers on specific dates of outpatient visits, and much more. I'll describe registries, if I use them in my posts down the line. If you are very interested in them, then you are probably Danish, and can read more [here](https://www.esundhed.dk/Dokumentation?rid=5).
+There are plenty of other datasets in DNPR: t_foedsler with specific data on deliveries, t_sksube on various tests and examinations, t_pers on specific dates of outpatient visits, and much more. I'll describe registries, if I use them in my posts down the line. If you are very interested in them, then you are probably Danish, and can read more [here](https://www.esundhed.dk/Dokumentation?rid=5).
+
+# And now ...
+
+On with the show! The first guide! INSERT LINK
