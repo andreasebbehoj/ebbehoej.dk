@@ -34,7 +34,7 @@ A bit of house-keeping before we get to the juicy stuff. What is registry-based 
 
 I suspect that if you (and three other people in the world, who found this guide), probably know what registry-based research is. But just so everybody is on the same page: Registry-based research is exactly what the name suggest: Investigation of some research question using data from a registry. 
 
-In my world of medicine and epidemiology that would typical mean:
+In my world of medicine and epidemiological research that would often mean:
 
 1) identify a cohort of patients with some condition, [say rare adrenal tumors](https://www.dovepress.com/pheochromocytoma-in-denmark-during-1977-2016-validating-diagnosis-code-peer-reviewed-fulltext-article-CLEP), using a combination of registered diagnosis codes and surgical procedures,
 
@@ -44,4 +44,34 @@ In my world of medicine and epidemiology that would typical mean:
 
 You can read *a bit* more in EMA's [33-page guideline ](https://www.ema.europa.eu/en/guideline-registry-based-studies)for registry-based research, if you are so inclined. 
 
-## Example data
+## Example data - The Danish National Patient Registry
+
+We will need some registry-data to serve as an example during this post series and so you can get your hands dirty, playing around with some data yourselves. I am most familiar with the Danish health registries, so I've chosen to make a synthetic data based on the Danish National Patient Registry (aka. Landspatientregisteret, LPR, or DNPR). You can read about [DNPR in this scientific paper](https://doi.org/10.2147/CLEP.S91125). In brief, it is a nationwide registry containing administrative data on all somatic hospitalizations (since 1977) and all outpatient and psychistric contacts (since 1995). 
+
+You can download the completely made-up dataset on Github (INSERT LINK). Or you can download the files directly into your current folder using your do-file editor and the code below (which is what I am going to do in all posts): 
+
+```
+
+```
+
+I've made a short description of DNPR and its various datasets below. You can read it now or wait. I'll refer to it in the coming posts, as, so you don't have to bore yourself with it now. Just know that the DNPR registry data is split into various datasets (t_adm, t_diag, t_opr, ...) and that *recnum* is the key variable used to identify a unique hospital contact across all datasets. 
+
+Click the link to get to the first post or read on below. !!!INSERT LINK TO FIRST POST!!!
+
+### t_adm
+
+The administrative stuff. Each row in t_adm corresponds to a hospital admission, outpatient visit, etc. t_adm include data such as date of admission, date of discharge, hospital name, department name, medical speciality, home municipality, and more. 
+
+t_adm includes two variables you really need to know about. The Central Person Registry (CPR) number and the *recnum.* 
+
+\- The CPR number is a unique personal ID that all Danish residents gets assigned at birth or when moving to Denmark. The CPR number does not change (like a social security number) and used across all Danish adminstrative and health registries. The CPR number is truly the One Variable of all Danish registries, which binds them together and rule them all. 
+
+The One variable to bind them all together. 
+
+which is a unique 
+
+t_adm also includes the CPR number of the patient, which is a unique and permanent ID number all Danish residents have, and finally the all-important: *recnum*! *recnum* is the record number, which serve as the 'key-variable' in DNPR, meaning that it is the key to  it is a unique number in t_adm, which that identifies bind and rule them allthe one dataset to rule them all.
+
+
+
+Due to the obvious privacy concerns, this is often something that has been lacking from courses I've attended and guides I've read. Therefore, I have made a synthetic dataset, which looks a lot like the real thing. I've modelled
