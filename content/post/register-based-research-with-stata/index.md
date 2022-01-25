@@ -9,6 +9,8 @@ summary: Stata is excellent for register-based research, but the learning curve
   journey.
 draft: true
 featured: false
+authors:
+  - admin
 tags:
   - stata;registry-based;epidemiology
 categories:
