@@ -34,7 +34,7 @@ While REDCap is amazing, is does has one minor disadvantage. Everytime you add a
 Luckily, you can automate the process of downloading data directly within Stata. All it takes is five minutes and a few lines of code in your do-file.
 
 ##### TL;DR
-If you are the impatient "I saw Harry Potter but never read the books"-type, then you can [download the Stata do file here](https://github.com/andreasebbehoj/stata-examples/tree/master/Redcap%20API). If you are the type that want all the nitty-gritty details, then read on.
+If you are the impatient "I saw the Harry Potter movies but never read the books"-type, then you can [download the Stata do file here](https://github.com/andreasebbehoj/stata-examples/tree/master/Redcap%20API). If you are the type that want all the nitty-gritty details, then read on.
 
 ##### What is API?
 API stands for *Application Program Interface*. It is basically a programming language that computer programs use to communicate with each other.
@@ -172,7 +172,17 @@ The `nostop` option forces Stata to run the do file until the end, even if it en
 And now you are done! Congratulations on becoming your office's resident API wizard. Hopefully, it all worked like a charm. See the sections below for troubleshooting and tips on other API features.
 
 ### Troubleshooting
-If the code doesn't work, make sure you've specified the correct _apikey_ and _apiurl_, and that you run the entire do file from top to bottom. If that doesn't do it, try downloading my do file [from Github](https://github.com/andreasebbehoj/stata-examples/tree/master/Redcap%20API) and see if you've made a typo. If it still doens't work, then don't hesitate writing to me.
+If the code doesn't work, make sure you've specified the correct _apikey_ and _apiurl_, and that you run the entire do file from top to bottom. If that doesn't do it, try downloading my do file [from Github](https://github.com/andreasebbehoj/stata-examples/tree/master/Redcap%20API) and see if you've made a typo. If it still doesn't work, then don't hesitate writing to me.
+
+##### Error message: You do not have permissions to use the API
+I've received a few emails from people getting this error in their CSV file instead of the lovely data they expected. First, go back and check that you have the correct API token and all that in the [beginning of this guide](#REDCap-settings). If it doesn't solve the issue, Google tells me it is probably because the URL has been misspecified so _carefully_ check that you haven't made a typo. Maybe you wrote "http://" instead of "https://". Or maybe you have written the wrong version name in the URL (e.g. "https://redcap.institutionname.edu/api/7.1.1"). Try simply removing the version to see if it fixes the issue (https://redcap.institutionname.edu/api/).
+
+##### Read/write issues with Stata and Mac computers
+If you are a Mac user, then you might have issues with read/write access in the folder you are trying to download the csv file into.
+
+Maybe you have accidentally changed the working directory to some weird folder in your system which contains stuff you really should not be messing with. Your can check your current working folder by typing `cd`. You can change working folder to the project folder by typing `cd "pathtoprojectfolder"`.
+
+If you are in the correct working folder then you probably need to change your access from "read only" to "read/write access". A guide on how to do this can be found [here](https://www.stata.com/support/faqs/mac/cannot-write-in-directory/). Thanks to Jeniffer Nagudi (University of the Witwatersrand, South Africa) for pointing this out to me.
 
 ### Download specific records with filter logic
 If you only need specific patients (records), you can use REDCap's filter logic to specify which records the API should to download. This can make downloading a lot faster if you have a large database. For example, you might only need the patients that were included in your study (included=1) and got the disease you are interested in (disease=1). To select these records, you only need to add a single line to the `shell` command:
