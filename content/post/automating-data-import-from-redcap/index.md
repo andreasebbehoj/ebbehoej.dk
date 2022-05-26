@@ -175,7 +175,9 @@ And now you are done! Congratulations on becoming your office's resident API wiz
 If the code doesn't work, make sure you've specified the correct _apikey_ and _apiurl_, and that you run the entire do file from top to bottom. If that doesn't do it, try downloading my do file [from Github](https://github.com/andreasebbehoj/stata-examples/tree/master/Redcap%20API) and see if you've made a typo. If it still doesn't work, then don't hesitate writing to me.
 
 ##### Error message: You do not have permissions to use the API
-I've received a few emails from people getting this error in their CSV file instead of the lovely data they expected. First, go back and check that you have the correct API token and all that in the [beginning of this guide](#REDCap-settings). If it doesn't solve the issue, Google tells me it is probably because the URL has been misspecified so _carefully_ check that you haven't made a typo. Maybe you wrote "http://" instead of "https://". Or maybe you have written the wrong version name in the URL (e.g. "https://redcap.institutionname.edu/api/7.1.1"). Try simply removing the version to see if it fixes the issue (https://redcap.institutionname.edu/api/).
+I've received a few emails from people getting this error in their CSV file instead of the lovely data they expected.
+{{< figure src="redcap-error-no-permission.PNG" title="REDCap You do not have permission to use the API" lightbox="true" >}}
+First, go back and check that you have the correct API token and all that in the [beginning of this guide](#REDCap-settings). If it doesn't solve the issue, Google tells me it is probably because the URL has been misspecified so _carefully_ check that you haven't made a typo. Maybe you wrote "http://" instead of "https://". Or maybe you have written the wrong version name in the URL (e.g. "https://redcap.institutionname.edu/api/7.1.1"). Try simply removing the version to see if it fixes the issue (https://redcap.institutionname.edu/api/).
 
 ##### Read/write issues with Stata and Mac computers
 If you are a Mac user, then you might have issues with read/write access in the folder you are trying to download the csv file into.
