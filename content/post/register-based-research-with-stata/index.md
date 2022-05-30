@@ -37,13 +37,13 @@ I plan to write a series of posts on how to tackle the issues, listed below:
 * How to merge registry data split across multiple files (e.g. t_adm t_diag t_opr)
 * How to translate codes to text (e.g. ICD-8 and ICD-10 diagnoses, surgery codes, etc.)
 =======
-But the devil is in the detail, and in this case, the devil is hiding in the word *once*. Because the learning curve can be steep with Stata. And you can quickly lose track of things when you are trying to combine the data on 100,000 patients with data on their 1,000,000 hospital contacts, which are again linked to 10,000,000 diagnosis codes and surgery codes. This is this the point where you wish you were a 'real researcher'. You know, wearing a cool coat, doing fancy stuff in the lab, and being able to manage the data of all the patients in your entire PhD project (n=20) in a single spreadsheet. 
+But the devil is in the detail, and in this case, the devil is hiding in the word *once*. Because the learning curve can be steep with Stata. And you can quickly lose track of things when you are trying to combine the data on 100,000 patients with data on their 1,000,000 hospital contacts, which are again linked to 10,000,000 diagnosis codes and surgery codes. This is this the point where you wish you were a 'real researcher'. You know, wearing a cool coat, doing fancy stuff in the lab, and being able to manage the data of all the patients in your entire PhD project (n=20) in a single spreadsheet.
 
-But don't panic yet. 99% of your data problems can probably be solved in Stata with *reshape* and *merge*, and the rest will hopefully also be covered in this series. 
+But don't panic yet. 99% of your data problems can probably be solved in Stata with *reshape* and *merge*, and the rest will hopefully also be covered in this series.
 
 # Outline & concept
 
-I plan to write a series of posts on how to tackle the following data management issues: 
+I plan to write a series of posts on how to tackle the following data management issues:
 
 * How to organize your do-files in your registry-based research project
 * How to import and combine annual registry files in Stata (t_adm_1977 t_adm_1978 ... t_adm_2021)
@@ -57,7 +57,7 @@ I plan to write a series of posts on how to tackle the following data management
 <<<<<<< HEAD
 Some topics are common challenges, which everybody working with registry data will face. Other topics might showcase an advanced technique or perhaps only be relevant for researchers working with Danish registries.
 =======
-Some topics are common challenges, which everybody working with registry data will face. Others are niche topics meant to showcase some technique in Stata or might only be relevant for researchers working with Danish registries. But all topics will be explained with examples and Stata code you can download and run yourself. 
+Some topics are common challenges, which everybody working with registry data will face. Others are niche topics meant to showcase some technique in Stata or might only be relevant for researchers working with Danish registries. But all topics will be explained with examples and Stata code you can download and run yourself.
 >>>>>>> 608ea93e54cb61010901b9ccfe89243008e14027
 
 I'll add links to the list as soon as I finish a new post. But the deadline for my PhD thesis is closing in, so it might take some time. Write me, if you think I should prioritize a particular data management issue, which has been grinding your gears (too).
@@ -68,7 +68,7 @@ A bit of house-keeping before we get to the juicy stuff. What is registry-based 
 
 ## Registry-based research
 
-I suspect that if you, probably know what registry-based research is. But just so everybody is on the same page: Registry-based research is exactly what the name suggest: Investigation of some research question using data from a registry.
+I suspect that if you, probably know what registry-based research is. But just so everybody is on the same page. Registry-based research is exactly what the name suggest: Investigation of some research question using data from a registry.
 
 In my world of medicine and epidemiological research that would often mean:
 
@@ -87,11 +87,11 @@ I've made a short description of DNPR and its various datasets below. You can re
 
 You can download the completely made-up dataset on Github (INSERT LINK). Or you can download the files directly into your current folder using your do-file editor and the code below (which is what I am going to do in all posts):
 =======
-We will need some registry-data to serve as an example during this post series and so you can get your hands dirty, playing around with some data yourself. I am most familiar with the Danish health registries, so I've chosen to make a synthetic data based on the Danish National Patient Registry (aka. Landspatientregisteret, LPR, or DNPR). You can read about [DNPR in this scientific paper](https://doi.org/10.2147/CLEP.S91125). In brief, it is a nationwide registry containing administrative data on all somatic hospitalizations (since 1977) and all outpatient and psychistric contacts (since 1995). 
+We will need some registry-data to serve as an example during this post series and so you can get your hands dirty, playing around with some data yourself. I am most familiar with the Danish health registries, so I've chosen to make a synthetic data based on the Danish National Patient Registry (aka. Landspatientregisteret, LPR, or DNPR). You can read about [DNPR in this scientific paper](https://doi.org/10.2147/CLEP.S91125). In brief, it is a nationwide registry containing administrative data on all somatic hospitalizations (since 1977) and all outpatient and psychistric contacts (since 1995).
 
 ### Download data
 
-You can download the synthetic Danish National Patient Registry dataset on Github (!!!INSERT LINK!!!) and save it on your computer. Or you can download the files directly from your do-file editor (which is what I am going to do in all posts): 
+You can download the synthetic Danish National Patient Registry dataset on Github (!!!INSERT LINK!!!) and save it on your computer. Or you can download the files directly from your do-file editor (which is what I am going to do in all posts):
 
 !!! FINISH CODE !!!
 >>>>>>> 608ea93e54cb61010901b9ccfe89243008e14027
@@ -105,13 +105,13 @@ You can download the synthetic Danish National Patient Registry dataset on Githu
 <<<<<<< HEAD
 Once this is working, we are ready to get our hands dirty doing real data management on our fake registry data.  !!!INSERT LINK TO FIRST POST!!!
 =======
-The synthetic dataset follows the structure of the real DNPR (though a bit simplified), but does NOT contain real patient data. Once downloading is complete, you should see these files in your current folder. 
+The synthetic dataset follows the structure of the real DNPR (though a bit simplified), but does NOT contain real patient data. Once downloading is complete, you should see these files in your current folder.
 
 !!!INSERT SCREENSHOT!!!
 
 Now that we got a dataset to toy around with, you need to make a decision. I've made a rather detailed description of DNPR and its various datasets below. You can read it now before continuing or you save it for later and go straight to the first post and do some actual data management. !!!INSERT LINK!!!
 
-Don't worry if want to skip it. I'll refer back to this post as relevant. For now, just know that the DNPR registry data is split into various datasets (t_adm, t_diag, t_opr, ...) and that *recnum* is the key variable used to identify a unique hospital contact across all datasets. 
+Don't worry if you want to skip it. I'll refer back to this post as relevant. For now, just know that the DNPR registry data is split into various datasets (t_adm, t_diag, t_opr, ...) and that *recnum* is the key variable used to identify a unique hospital contact across all datasets.
 >>>>>>> 608ea93e54cb61010901b9ccfe89243008e14027
 
 Or you can read the detailed description of DNPR data before you move on.
