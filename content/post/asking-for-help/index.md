@@ -23,12 +23,12 @@ header:
 ---
 {{% toc %}}
 
-### Intro
+### Getting help
 Sometimes you get stuck in Stata and your code simply refuses to work. You've googled everything, gone through the Stata cheat sheets, read the documentation and [all the other tools you can think of](https://www.ebbehoej.dk/post/stata-ressources-for-beginners/). You're stuck and you need help from somebody.
 
 Luckily, most researchers are happy to help. But how do you go about asking on a forum or writing to somebody? What do you need to include in your post or email so that others have a chance of understanding what you want and where your code has gone wrong?
 
-I get quite a few emails from people who've read one of my guides but can't get it to work. I like helping people (Stata is my hobby afterall) and you are always welcome to ask. But often, the initial email I receive is not very specific about the problem or doesn't include the information I need to understand where the problem lies. Hence, this short guide on how to ask other researchers for help.
+I get quite a few emails from people who've read one of my guides but can't get it to work. I like helping people (Stata is my hobby after all) and you are always welcome to ask. But often, the initial email I receive is not very specific about the problem or doesn't include the necessary information to understand where the problem lies. Hence, this short guide on how to ask other researchers for help.
 
 ### In forums
 
