@@ -21,6 +21,7 @@ header:
     image: "header_asking-for-help.jpg"
     caption: "An example of a pretty effective -albeit rather unspecific- plea for help."
 ---
+{{% toc %}}
 Sometimes you get stuck in Stata and your code simply refuses to work. You've googled everything, gone through the Stata cheat sheets, read the documentation and [all the other tools you can think of](https://www.ebbehoej.dk/post/stata-ressources-for-beginners/). You're stuck and you need help from somebody.
 
 Luckily, most researchers are happy to help. But how do you go about asking on a forum or writing to somebody? What do you need to include in your post or email so that others have a chance of understanding what you want and where your code has gone wrong?
