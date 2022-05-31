@@ -24,7 +24,7 @@ One of my colleagues had a pretty common data problem: How to load around 200 in
 
 There were approx. 100 patients and each patient had 2 csv-files containing different scans. He _could_ of course manually copy/paste the contents from file into a single excel file and then load the combined file into Stata. While it is completely possible to do, it is repetitive, boring and there is a high risk of making manual errors.
 
-No thanks. Life offers plenty of monkey work already.
+No thanks. Life already offers plenty of repetitive and boring monkey work.
 
 {{% toc %}}
 
@@ -76,9 +76,9 @@ Next, we will ask Stata to run a loop (i.e. run the same code several times) for
 foreach x of local files {
     di "`x'" // Display file name
 
-	* 2A) Import each file
-	qui: import delimited "`x'", delimiter(";")  case(preserve) clear // Import csv file
-	qui: gen id = subinstr("`x'", ".csv", "", .)	// Generate id variable (same as file name but without .csv)
+	* 2A) Import each file and generate id var (filename without ".csv")
+	qui: import delimited "`x'", delimiter(";")  case(preserve) clear // <-- Change delimiter() if vars are separated by "," or tab
+	qui: gen id = subinstr("`x'", ".csv", "", .)
 
 	* 2B) Append each file to masterfile
 	append using `master'
@@ -87,21 +87,23 @@ foreach x of local files {
 ```
 Run this code, and voila! You have combined all 200 (or 200,000) files in the blink of an eye. Only thing left is to export the data.
 
+Note: If your final dataset only contains the variables _id_ and _v1_, then it is because the variables in your csv files are separated by something other than semicolons. Use `browse` to inspect the data to see if it is spaces, tabs, commas or something else and correct the `delimited()` option above. Type `help import delimited` or `db import delimited` to read more.
+
 
 ### Step 3 - Export final data set
 If you are used to Stata, then exporting the final data set is pretty straight forward.
 ```
 order id, first
-sort id Segment
+sort id
 save "csv_combined.dta", replace
 ```
 
 
 ### Final remarks
-Hope this introduction to the `loop` and `dir` commands has helped. The principles can of course be utilized for much more complicated data set and/or more complex tasks.
+Hope this introduction to the `loop` and `dir` commands has helped. Naturally, the same principles can be used for other file types and much more complex tasks.
 
 Other examples of use:
 * Importing txt-files (same principle as csv files above but change `dir` and `import delimited` to new file format)
-* Importing pdf files (use DocuFreezer to batch convert pdf files to txt files and same as above)
+* Importing pdf-files (use DocuFreezer to batch convert pdf files to txt files and same as above)
 * Convert individual csv data files to individual Stata files (simply add `save "newfilename.dta", replace` in bottom of loop)
 * Copy csv files from many different folders into a single folder using `copy` and `shell` (a bit more advanced, see [this post on Statalist](https://www.statalist.org/forums/forum/general-stata-discussion/general/1384969-using-copy-with-local-macros))
