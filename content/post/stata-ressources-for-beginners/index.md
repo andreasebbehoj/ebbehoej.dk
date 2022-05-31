@@ -14,6 +14,7 @@ authors:
   - admin
 tags:
   - stata
+  - stata resources
 categories:
   - stata
 image:
