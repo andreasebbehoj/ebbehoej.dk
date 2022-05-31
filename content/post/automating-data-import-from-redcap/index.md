@@ -18,6 +18,7 @@ tags:
   - data import
   - api
   - redcap
+  - data management
 categories:
   - stata
 image:

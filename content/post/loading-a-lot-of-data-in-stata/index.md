@@ -9,6 +9,7 @@ authors:
   - admin
 tags:
   - stata
+  - data management
 categories:
   - stata
 image:

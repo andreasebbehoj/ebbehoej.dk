@@ -10,9 +10,9 @@ authors:
   - admin
 tags:
   - stata
+  - stata resources
 categories:
   - stata
-  - stata resources
 image:
   filename: featured
   focal_point: Smart
