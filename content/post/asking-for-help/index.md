@@ -44,11 +44,11 @@ The key thing is to include a working example of your code which everybody can r
 
 ### By mail
 
-If you're a specific researcher (say me), they might have other preferences than a forum, depending on what your issue is. What you need to include in your email might also depends on what you want help with. If you're writing the author of a specific package to report a bug, it is again adviseable to make a short do file with a example dataset that reproduces the error. If you're writing the author of a scientific paper, who have produced a cool graph or analysis that you want to reproduce, then it might be OK to just (politely) ask if you can have a copy of the do file.
+If you're writing a specific researcher, he or she might have other preferences than a forum. What you should include in your email might also depends on what you want help with. If you're writing the author of a specific package to report a bug, it is again adviseable to make a short do file with a example dataset that reproduces the error. If you're writing the author of a scientific paper, who have produced a cool graph or analysis that you want to reproduce, then it might be OK to just (politely) ask if you can have a copy of the do file.
 
 ### Writing me
 
-As I said, I am happy to answer emails about Stata and my posts, programs, etc. But if you're writing me about an issue, **I would very much like** you to include the following in your email:
+As I said, I am happy to answer emails about Stata and my posts, programs, etc. But if you're writing me because you have problems with some code I wrote, **I would very much like** you to include the following in your email:
 
 1. A description of your problem
 
@@ -62,7 +62,7 @@ And by 'the whole code' I mean everything that is relevant to the issue at hand,
 
 3. A log file of you running the code (see caveat below)
 
-Often, I get an email saying that "I tried  your code on whatever topic but Stata reports an error". That is not as informative or precise as the including the actual error message that Stata gives you. A log file includes everything you see in the Stata results window, including your code, results, error messages, the whole shabang.
+Often, I get an email saying that "I tried the code from your guide on something-something but Stata reports an error". That is not as informative or precise as the including the actual error message that Stata gives you. A log file includes everything you see in the Stata results window, including your code, results, error messages, the whole shabang.
 
 Log files are extremely useful for many reasons. If you haven't heard about logs, then I'd recommend you google a bit or see a YouTube video about Stata logs (for example [Joseph Cohen's 4 min guide](https://www.youtube.com/watch?v=VD_QHHC4F6k)).
 
@@ -70,11 +70,13 @@ In brief, you start a log by typing `log using filename, replace`, run your code
 
 4. Other info that might be relevant
 
-Depending on your issue it could be relevant to send a screen dump of a graph, the browse window, or the folder containing the files you want to import. The relevant files you attach in your first mail, the easier it is for me to understand your problem and help you. But remember not send sensitive data (see below)!
+Depending on your issue it could be relevant to send a screen dump of a graph, the browse window, or the folder containing the files you want to import. The more relevant files you attach in your mail, the faster and easier it is for me to help you. But remember not send sensitive data (see below)!
 
-### An important caveat
+### Beware of sensitive data
 
-Never ever send patient identifiable data or other types sensitive data! Not to me or anyone else. Regular emails are not a safe way to send sensitive data. Besides, there are often rules against that (GDPR, privacy rules, institution policies, etc). So before you send your email, check:
+Never ever send patient identifiable data or other types sensitive data! Not to me or anyone else. Regular emails are not a safe way to send sensitive data. Besides, there are often rules against that (GDPR, privacy rules, institution policies, etc).
+
+So before you send your email, check:
 
 * Attached files: Obviously, you shouldn't send .csv or .dta files with identifiably patient data. But completely anonymized data are OK. If you want to send a file/screen dump of the data, replace IDs and dates with some gibberish. That way I can understand you data structure without knowing that it was John Doe from Arkansas, born May 5 1966, who underwent appendectomy October 22 last year.
 * Do file: Remember that if you drop specific observations (e.g. `drop if socialsecuritynumber="050201-1234"`) then you have sensitive data in your do file. Delete it before you share the do file with others.
@@ -82,4 +84,4 @@ Never ever send patient identifiable data or other types sensitive data! Not to 
 
 ### Final remarks
 
-That were my tips on how to ask others for help. Naturally, I hope you'll read this before you write me, so we can both save time. If you wrote me an email before reading this, then don't fret. As I said, Stata is my hobby and I don't mind helping others with it.
+That were my tips on how you can help others who are trying to help you. Let me know if you have other tips or useful links/guides on Stata-etiquette that I should add.
